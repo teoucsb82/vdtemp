@@ -1,16 +1,30 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 	<head>
+	  <meta charset="utf-8">
 	  <title>Viadeca</title>
-	  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+	  <meta name="description" content="Your description">
+		<meta name="keywords" content="Your,Keywords">
+		<meta name="author" content="ResponsiveWebInc">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+
+		<link rel="shortcut icon" href="img/favicon/favicon.png">
+
+		<%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
 	  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
 	  <%= csrf_meta_tags %>
 	</head>
-	<body>
+	<body class="<%= yield :body_class unless :body_class.empty? %>">
 		<%= render 'layouts/header' %>
-		<div class="container">
-			<%= render 'layouts/flash' %>
-			<%= yield %>
+		
+		<div class="page-head">
+			<div class="container">
+				<%= yield %>
+			</div>
 		</div>
-	</body>
+
+		<%= render 'layouts/cta' %>
+		<%= render 'layouts/footer' %>
+	</body>	
 </html>

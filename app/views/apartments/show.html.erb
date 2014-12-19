@@ -1,0 +1,26 @@
+
+<h2><%= @apartment.street_address %>, #<%= @apartment.unit %></h2>
+<h2><%= @apartment.city %>, <%= @apartment.state %> <%= @apartment.zip %></h2>
+
+<h3>Amenities</h3>
+
+
+<%= "rent = #{@apartment.rent}" unless @apartment.rent.nil? %>
+<%= "bedrooms = #{@apartment.bedrooms}" unless @apartment.bedrooms.nil? %>
+<%= "bathrooms = #{@apartment.bathrooms}" unless @apartment.bathrooms.nil? %>
+<%= "square_footage = #{@apartment.square_footage}" unless @apartment.square_footage.nil? %>
+<%= "parking = #{@apartment.parking}" unless @apartment.parking.nil? %>
+<%= "stove = #{@apartment.stove}" unless @apartment.stove.nil? %>
+<%= "washer = #{@apartment.washer}" unless @apartment.washer.nil? %>
+<%= "dryer = #{@apartment.dryer}" unless @apartment.dryer.nil? %>
+<%= "dishwasher = #{@apartment.dishwasher}" unless @apartment.dishwasher.nil? %>
+<%= "refrigerator = #{@apartment.refrigerator}" unless @apartment.refrigerator.nil? %>
+<%= "microwave = #{@apartment.microwave}" unless @apartment.microwave.nil? %>
+<%= "laundry_on_site = #{@apartment.laundry_on_site}" unless @apartment.laundry_on_site.nil? %>
+<%= "hardwood_floors = #{@apartment.hardwood_floors}" unless @apartment.hardwood_floors.nil? %>
+<%= "pets_allowed     = #{@apartment.pets_allowed}" unless @apartment.pets_allowed.nil? %>
+<%= "gas_heater = #{@apartment.gas_heater}" unless @apartment.gas_heater.nil? %>
+<%= "balcony = #{@apartment.balcony}" unless @apartment.balcony.nil? %>
+<%= "air_conditioning = #{@apartment.air_conditioning}" unless @apartment.air_conditioning.nil? %>
+<%= "fireplace = #{@apartment.fireplace}" unless @apartment.fireplace.nil? %>
+<%= "patio = #{@apartment.patio}" unless @apartment.patio.nil? %>

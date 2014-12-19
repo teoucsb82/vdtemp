@@ -3,6 +3,7 @@ Viadeca::Application.routes.draw do
   root 'pages#index'
 
   resources :pages, :only => [:index]
+  resources :apartments
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

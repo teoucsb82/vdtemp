@@ -1,0 +1,154 @@
+<div class="jumbotron">
+  <h2>New Apartment</h2><hr>
+  <%= form_for @apartment, :html => {:class => "form-horizontal"} do |f| %>
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="form-group">
+          <label for="street_address" class="col-sm-2 control-label">Street Address</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="street_address" placeholder="123 Fake Street" name="location[street_address]">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="unit" class="col-sm-2 control-label">Unit</label>
+          <div class="col-sm-2">
+            <input type="text" class="form-control" id="unit" placeholder="A" name="location[unit]">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="city" class="col-sm-2 control-label">City</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="city" placeholder="Los Angeles" name="location[city]">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="state" class="col-sm-2 control-label">State</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="state" placeholder="CA" name="location[state]">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="zip" class="col-sm-2 control-label">Zip</label>
+          <div class="col-sm-10">
+            <input type="number" class="form-control" id="zip" placeholder="90025" name="location[zip]">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :description, :class => "col-sm-2 control-label" %>
+          <div class="col-sm-10">
+            <%= f.text_area :description, :class => "form-control", :rows => 4 %><br />
+          </div>
+        </div>
+          
+        <div class="form-group">    
+          <label for="submit" class="col-sm-2 control-label"></label>
+          <div class="col-sm-10">
+            <%= f.submit :class => "form-control btn-primary" %>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6">
+        <div class="form-group">
+          <label for="rent" class="col-sm-2 control-label">Rent</label>
+          <div class="col-sm-10">
+            <input type="number" class="form-control" id="rent" placeholder="2000.00" name="metadata[rent]">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="bedrooms" class="col-sm-2 control-label">Bedrooms</label>
+          <div class="col-sm-10">
+            <input type="number" class="form-control" id="bedrooms" placeholder="2" name="metadata[bedrooms]">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="bathrooms" class="col-sm-2 control-label">Bathrooms</label>
+          <div class="col-sm-10">
+            <input type="number" class="form-control" id="bathrooms" placeholder="1" name="metadata[bathrooms]">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="square_footage" class="col-sm-2 control-label">Square Footage</label>
+          <div class="col-sm-10">
+            <input type="number" class="form-control" id="square_footage" placeholder="500" name="metadata[square_footage]">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="parking" class="col-sm-2 control-label">Parking Spaces</label>
+          <div class="col-sm-10">
+            <input type="number" class="form-control" id="parking" placeholder="1" name="metadata[parking]">
+          </div>
+        </div>
+
+        <div>
+        <label class="checkbox-inline" style="margin-left:10px">
+          <input type="checkbox" name="metadata[stove]" value="yes"> Stove
+        </label>
+
+        <label class="checkbox-inline">
+          <input type="checkbox" name="metadata[washer]" value="yes"> Washer
+        </label>
+
+        <label class="checkbox-inline">
+          <input type="checkbox" name="metadata[dryer]" value="yes"> Dryer
+        </label>
+
+        <label class="checkbox-inline">
+          <input type="checkbox" name="metadata[dishwasher]" value="yes"> Dishwasher
+        </label>
+
+        <label class="checkbox-inline">
+          <input type="checkbox" name="metadata[refrigerator]" value="yes"> Refrigerator
+        </label>
+
+        <label class="checkbox-inline">
+          <input type="checkbox" name="metadata[microwave]" value="yes"> Microwave
+        </label>
+
+        <label class="checkbox-inline">
+          <input type="checkbox" name="metadata[laundry_on_site]" value="yes"> Laundry on site
+        </label>
+
+        <label class="checkbox-inline">
+          <input type="checkbox" name="metadata[hardwood_floors]" value="yes"> Hardwood floors
+        </label>
+
+        <label class="checkbox-inline">
+          <input type="checkbox" name="metadata[pets_allowed]" value="yes"> Pets allowed
+        </label>
+
+        <label class="checkbox-inline">
+          <input type="checkbox" name="metadata[gas_heater]" value="yes"> Gas heater
+        </label>
+
+        <label class="checkbox-inline">
+          <input type="checkbox" name="metadata[balcony]" value="yes"> Balcony
+        </label>
+
+        <label class="checkbox-inline">
+          <input type="checkbox" name="metadata[patio]" value="yes"> Patio
+        </label>
+
+        <label class="checkbox-inline">
+          <input type="checkbox" name="metadata[air_conditioning]" value="yes"> Air conditioning
+        </label>
+
+        <label class="checkbox-inline">
+          <input type="checkbox" name="metadata[fireplace]" value="yes"> Fireplace
+        </label>
+        </div>
+
+      </div>
+
+    </div>
+  <% end %>
+</div>
