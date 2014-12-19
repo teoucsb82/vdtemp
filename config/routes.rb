@@ -1,9 +1,15 @@
 Viadeca::Application.routes.draw do
   devise_for :users
   root 'pages#index'
-
+  
+  namespace :admin do
+    get '/' => 'dashboards#index'
+  end
+  
   resources :pages, :only => [:index]
   resources :apartments
+
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

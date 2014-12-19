@@ -14,4 +14,4 @@
 //= require jquery_ujs
 //= require bootstrap
 //= require turbolinks
-//= require_directory ./macbeath
+//= require_directory ./dashboard

@@ -8,16 +8,10 @@
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
  *
+ *= require_tree ./dashboard
  *= require_self
  *= require font-awesome
  */
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
-@import "./macbeath/blue";
-@import "./macbeath/flexslider";
-@import "./macbeath/owl.carousel";
-@import "./macbeath/prettyPhoto";
-@import "./macbeath/settings";
-@import "./macbeath/slider";
-@import "./macbeath/style";

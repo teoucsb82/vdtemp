@@ -5,11 +5,4 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   belongs_to :apartment
-
-  class Role
-  	ADMIN  = -1
-  	GUEST  = 0
-  	TENANT = 1
-  end
-
 end
