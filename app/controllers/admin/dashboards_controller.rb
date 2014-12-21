@@ -3,6 +3,10 @@ class Admin::DashboardsController < ApplicationController
   before_filter :authenticate_user!
   before_filter :is_admin?
 
+  def index
+    @users = User.where("id != ?", current_user.id)
+  end
+
   def is_admin?
     if current_user.admin?
       true
