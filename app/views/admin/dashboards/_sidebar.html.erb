@@ -17,9 +17,9 @@
           <li class="has_sub">
             <%= i_link_dropdown("Apartments", "#", "home") %>
             <ul>
-              <li><a href="widgets1.html">Widgets #1</a></li>
-              <li><a href="widgets2.html">Widgets #2</a></li>
-              <li><a href="widgets3.html">Widgets #3</a></li>
+              <% @properties.each do |property| %>
+                <li><%= link_to property.address, admin_property_path(property) %></li>
+              <% end %>
             </ul>
           </li>  
           <li class="has_sub">

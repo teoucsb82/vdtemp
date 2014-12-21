@@ -4,6 +4,10 @@ Viadeca::Application.routes.draw do
   
   namespace :admin do
     get '/' => 'dashboards#index'
+    resources :tenants
+    resources :properties do
+      resources :apartments
+    end
   end
   
   resources :pages, :only => [:index]

@@ -104,7 +104,7 @@
                   </li>
                   <% @users.each do |user| %>
                     <li>
-                      <h6><%= link_to user.email, "#" %></h6>
+                      <h6><%= link_to user.email, admin_tenant_path(user) %></h6>
                       <div class="clearfix"></div>
                       <hr />
                     </li>

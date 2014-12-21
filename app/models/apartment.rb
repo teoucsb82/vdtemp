@@ -2,6 +2,7 @@ class Apartment < ActiveRecord::Base
 	has_one :lease
   has_many :images, :as => :imageable
   has_many :tenants, :foreign_key => 'apartment_id', :class_name => "User"
+  belongs_to :property
 
 	after_initialize :load_location_attributes
 	attr_accessor :street_address, :unit, :city, :state, :zip
@@ -80,6 +81,4 @@ class Apartment < ActiveRecord::Base
 																				:fireplace => params[:fireplace],
 																				:patio => params[:patio] }.to_json)
 	end
-
-
 end
