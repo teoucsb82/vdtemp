@@ -13,13 +13,13 @@ class Admin::ApartmentsController < ApplicationController
   end
 
   def create
-    @apartment = Apartment.new(apartment_params)
-    @apartment.set_location_attributes(params[:location])
+    @property = Property.find(params[:property_id])
+    @apartment = @property.apartments.new(apartment_params)
     @apartment.set_metadata_attributes(params[:metadata])
     saved = @apartment.save
 
     if saved
-      redirect_to @apartment
+      redirect_to admin_apartment_path(@apartment)
     else
       flash[:alert] = @apartment.errors.full_messages
       render 'new'
@@ -32,6 +32,6 @@ class Admin::ApartmentsController < ApplicationController
 
   private
   def apartment_params
-    params.require(:apartment).permit(:description, :location, :metadata)
+    params.require(:apartment).permit(:description, :bedrooms, :bathrooms, :unit, :metadata, :available)
   end
 end

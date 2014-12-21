@@ -14,11 +14,14 @@
 ActiveRecord::Schema.define(version: 20141221065927) do
 
   create_table "apartments", force: true do |t|
-    t.text     "location"
+    t.string   "unit",                        null: false
+    t.integer  "bedrooms",                    null: false
+    t.float    "bathrooms",                   null: false
+    t.text     "description"
     t.text     "metadata"
+    t.boolean  "available",   default: false
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.text     "description"
     t.integer  "property_id"
   end
 
@@ -31,10 +34,16 @@ ActiveRecord::Schema.define(version: 20141221065927) do
   end
 
   create_table "properties", force: true do |t|
-    t.text     "address"
+    t.text     "street_address",                null: false
+    t.string   "city",                          null: false
+    t.string   "state",          default: "CA", null: false
+    t.integer  "zip",                           null: false
+    t.text     "metadata"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "properties", ["street_address"], name: "index_properties_on_street_address", unique: true
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "",    null: false

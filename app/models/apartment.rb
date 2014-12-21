@@ -4,33 +4,16 @@ class Apartment < ActiveRecord::Base
   has_many :tenants, :foreign_key => 'apartment_id', :class_name => "User"
   belongs_to :property
 
-	after_initialize :load_location_attributes
-	attr_accessor :street_address, :unit, :city, :state, :zip
-
 	after_initialize :load_metadata_attributes
-	attr_accessor :rent,
-								:bedrooms, :bathrooms, :square_footage, :parking,
+	attr_accessor :rent, :square_footage, :parking,
 								:stove, :washer, :dryer, :dishwasher, :refrigerator,
 								:microwave, :laundry_on_site, :hardwood_floors, :pets_allowed,
 								:gas_heater, :balcony, :air_conditioning, :fireplace, :patio
-
-
-	def load_location_attributes
-		return if self.location.blank?
-		location = JSON.parse(self.location)
-		self.street_address = location["street_address"]
-		self.unit 					= location["unit"]
-		self.city 					= location["city"]
-		self.state 					= location["state"]
-		self.zip            = location["zip"]
-	end
 
 	def load_metadata_attributes
 		return if self.metadata.blank?
 		apartment_data        = JSON.parse(self.metadata)
 		self.rent             = apartment_data["rent"]
-		self.bedrooms         = apartment_data["bedrooms"]
-		self.bathrooms        = apartment_data["bathrooms"]
 		self.square_footage   = apartment_data["square_footage"]
 		self.parking          = apartment_data["parking"]
 		self.stove            = apartment_data["stove"]
@@ -62,8 +45,6 @@ class Apartment < ActiveRecord::Base
 	def set_metadata_attributes(params)
 		return if params.nil?
 		self.update_attribute(:metadata, {  :rent => params[:rent].tr('^0-9.', '').to_f,
-																				:bedrooms => params[:bedrooms].tr('^0-9.', '').to_i,
-																				:bathrooms => params[:bathrooms].tr('^0-9.', '').to_f,
 																				:square_footage => params[:square_footage].tr('^0-9.', '').to_i,
 																				:parking => params[:parking],
 																				:stove => params[:stove],

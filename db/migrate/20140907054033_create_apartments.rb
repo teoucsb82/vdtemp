@@ -1,8 +1,12 @@
 class CreateApartments < ActiveRecord::Migration
   def change
     create_table :apartments do |t|
-			t.text :location
+			t.string :unit, :null => false
+      t.integer :bedrooms, :null => false
+      t.float :bathrooms, :null => false
+      t.text :description
       t.text :metadata
+      t.boolean :available, :default => false
 
       t.timestamps
     end

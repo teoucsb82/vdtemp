@@ -4,9 +4,10 @@ Viadeca::Application.routes.draw do
   
   namespace :admin do
     get '/' => 'dashboards#index'
+    get '/charts' => 'dashboards#charts'
     resources :tenants
     resources :properties do
-      resources :apartments
+      resources :apartments, shallow: true
     end
   end
   

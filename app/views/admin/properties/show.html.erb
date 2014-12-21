@@ -1,0 +1,54 @@
+<%= content_for :dashboard_header do %><%= formatted_address(@property) %><% end %>
+<%= content_for :dashboard_breadcrumbs do %>
+  <!-- Divider -->
+    <span class="divider">/</span> 
+    <%= link_to @property.street_address, admin_property_path(@property), class: "bread-current" %>
+<% end %>
+
+<div class="row">
+  <div class="col-md-12">
+    <div class="widget">
+      <div class="widget-head">
+        <div class="clearfix"></div>
+      </div>
+      <div class="widget-content">
+        <div class="padd">    
+          <!-- Table Page -->
+          <div class="page-tables">
+            <!-- Table -->
+            <div class="table-responsive">
+              <table cellpadding="0" cellspacing="0" border="0" id="data-table" width="100%">
+                <thead>
+                  <tr>
+                    <th>Unit</th>
+                    <th>Bedrooms</th>
+                    <th>Bathrooms</th>
+                    <th>Availabile</th>
+                    <th></th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <% @property.apartments.each do |apartment| %>
+                    <tr>
+                      <td><%= link_to apartment.unit, admin_apartment_path(apartment) %></td>
+                      <td><%= apartment.bedrooms %></td>
+                      <td><%= apartment.bathrooms %></td>
+                      <td><%= apartment.available %></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                  <% end %>
+                </tbody>
+              </table>
+              <div class="clearfix"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="widget-foot">
+        <%= link_to "Add Apartment", new_admin_property_apartment_path(@property), class: "btn btn-success" %>
+      </div>
+    </div>
+  </div>    
+</div>
