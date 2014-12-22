@@ -1,7 +1,13 @@
 module PropertiesHelper
     
-  def formatted_address(property)
-    return "#{property.street_address}, #{property.city}, #{property.state} #{property.zip}"
+  def formatted_address(obj)
+    if obj.is_a?(Property)
+      property = obj
+      return "#{property.street_address}, #{property.city}, #{property.state} #{property.zip}"
+    elsif obj.is_a?(Apartment)
+      apartment = obj
+      return "#{apartment.property.street_address}, ##{apartment.unit}"
+    end
   end
 
   def us_states

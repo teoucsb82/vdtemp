@@ -1,1 +1,6 @@
+<%= content_for :dashboard_breadcrumbs do %>
+  <!-- Divider -->
+    <span class="divider">/</span> 
+    <%= link_to @property.street_address, admin_property_path(@property), class: "bread-current" %>
+<% end %>
 <%= render 'form' %>

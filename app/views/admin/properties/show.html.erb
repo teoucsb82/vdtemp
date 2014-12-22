@@ -34,9 +34,9 @@
                       <td><%= link_to apartment.unit, admin_apartment_path(apartment) %></td>
                       <td><%= apartment.bedrooms %></td>
                       <td><%= apartment.bathrooms %></td>
-                      <td><%= apartment.available %></td>
-                      <td></td>
-                      <td></td>
+                      <td><%= available_colorizer(apartment.available) %></td>
+                      <td><%= link_to 'Edit', edit_admin_apartment_path(apartment), class: "btn btn-sm btn-info pull-right" %></td>
+                      <td><%= link_to 'Destroy', admin_apartment_path(apartment), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-sm btn-danger pull-right" %></td>
                     </tr>
                   <% end %>
                 </tbody>

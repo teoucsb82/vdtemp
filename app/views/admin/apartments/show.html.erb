@@ -1,1 +1,11 @@
+<%= content_for :dashboard_header do %><%= formatted_address(@apartment) %><% end %>
+<%= content_for :dashboard_breadcrumbs do %>
+  <!-- Divider -->
+    <span class="divider">/</span> 
+    <%= link_to @property.street_address, admin_property_path(@property), class: "bread" %>
+
+    <span class="divider">/</span> 
+    <%= link_to @apartment.unit, admin_apartment_path(@apartment), class: "bread-current" %>
+<% end %>
+
 <%= @apartment.unit %>

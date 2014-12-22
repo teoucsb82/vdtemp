@@ -1,0 +1,25 @@
+<h1>Listing monkeys</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @monkeys.each do |monkey| %>
+      <tr>
+        <td><%= link_to 'Show', monkey %></td>
+        <td><%= link_to 'Edit', edit_monkey_path(monkey) %></td>
+        <td><%= link_to 'Destroy', monkey, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Monkey', new_monkey_path %>
