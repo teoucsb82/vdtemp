@@ -3,16 +3,17 @@ Viadeca::Application.routes.draw do
 
   devise_for :users
   root 'pages#index'
-  
+
   namespace :admin do
     get '/' => 'dashboards#index'
     get '/charts' => 'dashboards#charts'
-    resources :tenants
     resources :properties do
-      resources :apartments, shallow: true
+      resources :apartments, shallow: true do
+        resources :tenants, shallow: true
+      end
     end
   end
-  
+
   resources :pages, :only => [:index]
   resources :apartments
 
@@ -58,7 +59,7 @@ Viadeca::Application.routes.draw do
   #       get 'recent', on: :collection
   #     end
   #   end
-  
+
   # Example resource route with concerns:
   #   concern :toggleable do
   #     post 'toggle'

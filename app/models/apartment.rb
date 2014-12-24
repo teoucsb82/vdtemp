@@ -32,16 +32,6 @@ class Apartment < ActiveRecord::Base
 		self.patio            = apartment_data["patio"]
 	end
 
-	def set_location_attributes(params)
-		return if params.nil?
-		self.update_attribute(:location, {  :street_address => params[:street_address],
-																				:unit => params[:unit],
-																				:city => params[:city],
-																				:state => params[:state],
-																				:zip => params[:zip] }.to_json)
-	end
-
-
 	def set_metadata_attributes(params)
 		return if params.nil?
 		self.update_attribute(:metadata, {  :rent => params[:rent].tr('^0-9.', '').to_f,

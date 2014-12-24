@@ -16,6 +16,7 @@ class Admin::ApartmentsController < ApplicationController
   end
 
   def new
+    @property = Property.find(params[:property_id])
     @apartment = Apartment.new
   end
 

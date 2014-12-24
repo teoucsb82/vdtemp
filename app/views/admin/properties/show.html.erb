@@ -1,7 +1,7 @@
 <%= content_for :dashboard_header do %><%= formatted_address(@property) %><% end %>
 <%= content_for :dashboard_breadcrumbs do %>
   <!-- Divider -->
-    <span class="divider">/</span> 
+    <span class="divider">/</span>
     <%= link_to @property.street_address, admin_property_path(@property), class: "bread-current" %>
 <% end %>
 
@@ -12,7 +12,7 @@
         <div class="clearfix"></div>
       </div>
       <div class="widget-content">
-        <div class="padd">    
+        <div class="padd">
           <!-- Table Page -->
           <div class="page-tables">
             <!-- Table -->
@@ -23,6 +23,7 @@
                     <th>Unit</th>
                     <th>Bedrooms</th>
                     <th>Bathrooms</th>
+                    <th>Tenants</th>
                     <th>Availabile</th>
                     <th></th>
                     <th></th>
@@ -34,6 +35,7 @@
                       <td><%= link_to apartment.unit, admin_apartment_path(apartment) %></td>
                       <td><%= apartment.bedrooms %></td>
                       <td><%= apartment.bathrooms %></td>
+                      <td><%= apartment.tenants.size %></td>
                       <td><%= available_colorizer(apartment.available) %></td>
                       <td><%= link_to 'Edit', edit_admin_apartment_path(apartment), class: "btn btn-sm btn-info pull-right" %></td>
                       <td><%= link_to 'Destroy', admin_apartment_path(apartment), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-sm btn-danger pull-right" %></td>
@@ -50,5 +52,5 @@
         <%= link_to "Add Apartment", new_admin_property_apartment_path(@property), class: "btn btn-success" %>
       </div>
     </div>
-  </div>    
+  </div>
 </div>
