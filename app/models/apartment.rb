@@ -32,24 +32,35 @@ class Apartment < ActiveRecord::Base
 		self.patio            = apartment_data["patio"]
 	end
 
+  def amenities
+    results = []
+    metadata_to_ignore = ["rent", "square_footage", "parking"]
+
+    meta = JSON.parse(self.metadata)
+    meta.each do |k, v|
+      results << k if v && !metadata_to_ignore.include?(k.downcase)
+    end
+    return results
+  end
+
 	def set_metadata_attributes(params)
 		return if params.nil?
-		self.update_attribute(:metadata, {  :rent => params[:rent].tr('^0-9.', '').to_f,
-																				:square_footage => params[:square_footage].tr('^0-9.', '').to_i,
-																				:parking => params[:parking],
-																				:stove => params[:stove],
-																				:washer => params[:washer],
-																				:dryer => params[:dryer],
-																				:dishwasher => params[:dishwasher],
-																				:refrigerator => params[:refrigerator],
-																				:microwave => params[:microwave],
-																				:laundry_on_site => params[:laundry_on_site],
-																				:hardwood_floors => params[:hardwood_floors],
-																				:pets_allowed => params[:pets_allowed],
-																				:gas_heater => params[:gas_heater],
-																				:balcony => params[:balcony],
-																				:air_conditioning => params[:air_conditioning],
-																				:fireplace => params[:fireplace],
-																				:patio => params[:patio] }.to_json)
+		self.update_attribute(:metadata, {  :rent => params["rent"].tr('^0-9.', '').to_f,
+																				:square_footage => params["square_footage"].tr('^0-9.', '').to_i,
+																				:parking => params["parking"],
+																				:stove => params["stove"],
+																				:washer => params["washer"],
+																				:dryer => params["dryer"],
+																				:dishwasher => params["dishwasher"],
+																				:refrigerator => params["refrigerator"],
+																				:microwave => params["microwave"],
+																				:laundry_on_site => params["laundry_on_site"],
+																				:hardwood_floors => params["hardwood_floors"],
+																				:pets_allowed => params["pets_allowed"],
+																				:gas_heater => params["gas_heater"],
+																				:balcony => params["balcony"],
+																				:air_conditioning => params["air_conditioning"],
+																				:fireplace => params["fireplace"],
+																				:patio => params["patio"] }.to_json)
 	end
 end

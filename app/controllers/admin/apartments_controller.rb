@@ -38,8 +38,16 @@ class Admin::ApartmentsController < ApplicationController
   end
 
   def update
-    @apartment.update_attributes!(apartment_params)
-    render 'show'
+    respond_to do |format|
+      if @apartment.update(apartment_params)
+        @apartment.set_metadata_attributes(params[:metadata])
+        format.html { redirect_to admin_apartment_path(@apartment), notice: 'Apartment was successfully updated.' }
+        format.json { head :no_content }
+      else
+        format.html { render action: 'edit' }
+        format.json { render json: @apartment.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   def destroy

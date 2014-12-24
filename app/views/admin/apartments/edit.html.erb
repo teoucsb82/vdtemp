@@ -1,8 +1,22 @@
+<%= content_for :dashboard_header do %>
+  <%= formatted_address(@apartment) %>
+<% end %>
+<%= content_for :dashboard_breadcrumbs do %>
+  <!-- Divider -->
+    <span class="divider">/</span>
+    <%= link_to @property.street_address, admin_property_path(@property), class: "bread" %>
+    <span class="divider">/</span>
+    <%= link_to @apartment.unit, admin_apartment_path(@apartment), class: "bread" %>
+    <span class="divider">/</span>
+    Edit
+<% end %>
+
+
 <div class="row">
   <div class="col-md-12">
     <div class="widget wgreen">
       <div class="widget-head">
-        <div class="pull-left">Add Property</div>
+        <div class="pull-left">Edit Property</div>
         <div class="clearfix"></div>
       </div>
       <div class="widget-content">
@@ -10,7 +24,7 @@
           <br />
 
           <!-- Form starts.  -->
-          <%= form_for([:admin, @apartment], :html => {:class => "form-horizontal"}) do |f| %> 
+          <%= form_for([:admin, @apartment], :html => {:class => "form-horizontal"}) do |f| %>
             <div class="form-group">
               <%= f.label :unit, "Unit #", class: "col-lg-2 control-label" %>
 
@@ -37,21 +51,21 @@
             <div class="form-group">
               <label for="rent" class="col-lg-2 control-label">Rent</label>
               <div class="col-lg-8">
-                <input type="number" class="form-control" id="rent" name="metadata[rent]">
+                <input type="number" class="form-control" id="rent" name="metadata[rent]" value="<%= @apartment.rent %>">
               </div>
             </div>
 
             <div class="form-group">
               <label for="square_footage" class="col-lg-2 control-label">Square Footage</label>
               <div class="col-lg-8">
-                <input type="number" class="form-control" id="square_footage" name="metadata[square_footage]">
+                <input type="number" class="form-control" id="square_footage" name="metadata[square_footage]" value="<%= @apartment.square_footage %>">
               </div>
             </div>
 
             <div class="form-group">
               <label for="parking" class="col-lg-2 control-label">Parking Spaces</label>
               <div class="col-lg-8">
-                <input type="number" class="form-control" id="parking" name="metadata[parking]">
+                <input type="number" class="form-control" id="parking" name="metadata[parking]" value="<%= @apartment.parking %>">
               </div>
             </div>
 
@@ -61,65 +75,68 @@
               <div class="col-lg-8">
                 <%= f.text_area :description, class: "cleditor" %>
               </div>
-            </div>       
+            </div>
 
             <div class="form-group">
-              <label class="col-lg-2 control-label">Amenities</label>
+              <label class="col-lg-2 control-label">
+                <p>Amenities</p>
+                <a href="#" class="select-all">Select All</a> / <a href="#" class="select-none">Select None</a>
+              </label>
               <div class="col-lg-8">
                 <label class="checkbox-inline">
-                  <input type="checkbox" name="metadata[stove]" value="yes"> Stove
+                  <input type="checkbox" name="metadata[stove]" value="yes" <%= "checked" if @apartment.stove %>> Stove
                 </label>
 
                 <label class="checkbox-inline">
-                  <input type="checkbox" name="metadata[washer]" value="yes"> Washer
+                  <input type="checkbox" name="metadata[washer]" value="yes" <%= "checked" if @apartment.washer %>> Washer
                 </label>
 
                 <label class="checkbox-inline">
-                  <input type="checkbox" name="metadata[dryer]" value="yes"> Dryer
+                  <input type="checkbox" name="metadata[dryer]" value="yes" <%= "checked" if @apartment.dryer %>> Dryer
                 </label>
 
                 <label class="checkbox-inline">
-                  <input type="checkbox" name="metadata[dishwasher]" value="yes"> Dishwasher
+                  <input type="checkbox" name="metadata[dishwasher]" value="yes" <%= "checked" if @apartment.dishwasher %>> Dishwasher
                 </label>
 
                 <label class="checkbox-inline">
-                  <input type="checkbox" name="metadata[refrigerator]" value="yes"> Refrigerator
+                  <input type="checkbox" name="metadata[refrigerator]" value="yes" <%= "checked" if @apartment.refrigerator %>> Refrigerator
                 </label>
 
                 <label class="checkbox-inline">
-                  <input type="checkbox" name="metadata[microwave]" value="yes"> Microwave
+                  <input type="checkbox" name="metadata[microwave]" value="yes" <%= "checked" if @apartment.microwave %>> Microwave
                 </label>
 
                 <label class="checkbox-inline">
-                  <input type="checkbox" name="metadata[laundry_on_site]" value="yes"> Laundry on site
+                  <input type="checkbox" name="metadata[laundry_on_site]" value="yes" <%= "checked" if @apartment.laundry_on_site %>> Laundry on site
                 </label>
 
                 <label class="checkbox-inline">
-                  <input type="checkbox" name="metadata[hardwood_floors]" value="yes"> Hardwood floors
+                  <input type="checkbox" name="metadata[hardwood_floors]" value="yes" <%= "checked" if @apartment.hardwood_floors %>> Hardwood floors
                 </label>
 
                 <label class="checkbox-inline">
-                  <input type="checkbox" name="metadata[pets_allowed]" value="yes"> Pets allowed
+                  <input type="checkbox" name="metadata[pets_allowed]" value="yes" <%= "checked" if @apartment.pets_allowed %>> Pets allowed
                 </label>
 
                 <label class="checkbox-inline">
-                  <input type="checkbox" name="metadata[gas_heater]" value="yes"> Gas heater
+                  <input type="checkbox" name="metadata[gas_heater]" value="yes" <%= "checked" if @apartment.gas_heater %>> Gas heater
                 </label>
 
                 <label class="checkbox-inline">
-                  <input type="checkbox" name="metadata[balcony]" value="yes"> Balcony
+                  <input type="checkbox" name="metadata[balcony]" value="yes" <%= "checked" if @apartment.balcony %>> Balcony
                 </label>
 
                 <label class="checkbox-inline">
-                  <input type="checkbox" name="metadata[patio]" value="yes"> Patio
+                  <input type="checkbox" name="metadata[patio]" value="yes" <%= "checked" if @apartment.patio %>> Patio
                 </label>
 
                 <label class="checkbox-inline">
-                  <input type="checkbox" name="metadata[air_conditioning]" value="yes"> Air conditioning
+                  <input type="checkbox" name="metadata[air_conditioning]" value="yes" <%= "checked" if @apartment.air_conditioning %>> Air conditioning
                 </label>
 
                 <label class="checkbox-inline">
-                  <input type="checkbox" name="metadata[fireplace]" value="yes"> Fireplace
+                  <input type="checkbox" name="metadata[fireplace]" value="yes" <%= "checked" if @apartment.fireplace %>> Fireplace
                 </label>
               </div>
             </div>
@@ -128,11 +145,11 @@
               <label class="control-label col-lg-2">Available?</label>
               <div class="col-lg-5">
                 <div class="btn-group" data-toggle="buttons">
-                  <label class="btn btn-primary active">
-                    <input type="radio" name="apartment[available]" id="option1" autocomplete="off" value=false checked> No
+                  <label class="btn btn-primary <%= 'active' if !@apartment.available? %>">
+                    <input type="radio" name="apartment[available]" value=false <%= "checked" if !@apartment.available? %>> No
                   </label>
-                  <label class="btn btn-primary">
-                    <input type="radio" name="apartment[available]" id="option2" autocomplete="off" value=true> Yes
+                  <label class="btn btn-primary <%= 'active' if @apartment.available? %>">
+                    <input type="radio" name="apartment[available]" value=true  <%= "checked" if @apartment.available? %>> Yes
                   </label>
                 </div>
               </div>
@@ -150,6 +167,6 @@
       <div class="widget-foot">
         <!-- Footer goes here -->
       </div>
-    </div>  
+    </div>
   </div>
 </div>

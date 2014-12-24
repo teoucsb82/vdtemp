@@ -15,10 +15,30 @@ $(".dashboard-js").ready ->
   onOff()
   cleditor()
   prettyPhoto()
-  slimScroll()  
+  slimScroll()
   dtable()
   $(".modal").appendTo $("body")
   load_chart_data()
+  return
+
+$("form").ready ->
+  $(".select-all").click (event)->
+    event.preventDefault()
+    checkBoxes(true)
+    return
+  $(".select-none").click (event)->
+    event.preventDefault()
+    checkBoxes(false)
+    return
+  return
+
+
+checkBoxes = (bx) ->
+  cbs = document.getElementsByTagName("input")
+  i = 0
+  while i < cbs.length
+    cbs[i].checked = bx  if cbs[i].type is "checkbox"
+    i++
   return
 
 sidebar = ->
@@ -46,11 +66,11 @@ sidebar = ->
   $(".sidebar-dropdown a").on "click", (e) ->
     e.preventDefault()
     unless $(this).hasClass("open")
-      
+
       # hide any open menus and remove all other classes
       $(".sidebar #nav").slideUp 350
       $(".sidebar-dropdown a").removeClass "open"
-      
+
       # open our new menu and add the open class
       $(".sidebar #nav").slideDown 350
       $(this).addClass "open"
@@ -145,7 +165,7 @@ progressBar = ->
     $(".progress-animated .progress-bar").each ->
       me = $(this)
       perc = me.attr("data-percentage")
-      
+
       #TODO: left and right text handling
       current_perc = 0
       progress = setInterval(->
@@ -190,10 +210,10 @@ slider = ->
         $("#amount").val "$" + ui.values[0] + " - $" + ui.values[1]
         return
 
-    
-    # Vertical slider 
+
+    # Vertical slider
     $("#eq > span").each ->
-      
+
       # read initial values from markup and remove that
       value = parseInt($(this).text(), 10)
       $(this).empty().slider
@@ -319,8 +339,8 @@ dtable = ->
 
 load_chart_data = ->
   $ ->
-    
-    # Bar Chart starts 
+
+    # Bar Chart starts
     plotWithOptions = ->
       $.plot $("#bar-chart"), [
         d1
@@ -401,9 +421,9 @@ load_chart_data = ->
     return
 
 
-  # Bar chart ends 
+  # Bar chart ends
 
-  # Curve chart starts 
+  # Curve chart starts
   $ ->
     showTooltip = (x, y, contents) ->
       $("<div id=\"tooltip\">" + contents + "</div>").css(
@@ -490,16 +510,16 @@ load_chart_data = ->
     return
 
 
-  # Curve chart ends 
+  # Curve chart ends
 
-  # Realtime chart starts 
+  # Realtime chart starts
   $ ->
-    
+
     # we use an inline data source in the example, usually data would
     # be fetched from a server
     getRandomData = ->
       data = data.slice(1)  if data.length > 0
-      
+
       # do a random walk
       while data.length < totalPoints
         prev = (if data.length > 0 then data[data.length - 1] else 50)
@@ -507,7 +527,7 @@ load_chart_data = ->
         y = 10  if y < 10
         y = 70  if y > 70
         data.push y
-      
+
       # zip the generated y values with the x values
       res = []
       i = 0
@@ -519,14 +539,14 @@ load_chart_data = ->
         ]
         ++i
       res
-    
+
     # setup control widget
-    
+
     # setup plot
     # drawing is faster without shadows
     update = ->
       plot.setData [getRandomData()]
-      
+
       # since the axes don't change, we don't need to call plot.setupGrid()
       plot.draw()
       setTimeout update, updateInterval
@@ -564,9 +584,9 @@ load_chart_data = ->
     return
 
 
-  # Realtime charts ends 
+  # Realtime charts ends
 
-  # Pie chart starts 
+  # Pie chart starts
   $ ->
     data = []
     series = Math.floor(Math.random() * 10) + 1
@@ -619,5 +639,5 @@ load_chart_data = ->
     return
 
 
-  # Pie chart ends 
+  # Pie chart ends
 return

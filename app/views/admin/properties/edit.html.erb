@@ -10,7 +10,7 @@
           <br />
 
           <!-- Form starts.  -->
-          <%= form_for([:admin, @property], :html => {:class => "form-horizontal"}) do |f| %>
+          <%= form_for([:admin, @property], :url => admin_property_path, :html => {:class => "form-horizontal"}) do |f| %>
             <div class="form-group">
               <%= f.label :street_address, class: "col-lg-2 control-label" %>
 

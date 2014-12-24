@@ -2,13 +2,14 @@
 <%= content_for :dashboard_breadcrumbs do %>
   <!-- Divider -->
     <span class="divider">/</span>
-    <%= link_to @property.street_address, admin_property_path(@property), class: "bread-current" %>
+    <%= @property.street_address %>
 <% end %>
 
 <div class="row">
   <div class="col-md-12">
     <div class="widget">
       <div class="widget-head">
+        <div class="pull-left"><%= @property.description.html_safe %></div>
         <div class="clearfix"></div>
       </div>
       <div class="widget-content">
@@ -37,8 +38,8 @@
                       <td><%= apartment.bathrooms %></td>
                       <td><%= apartment.tenants.size %></td>
                       <td><%= available_colorizer(apartment.available) %></td>
-                      <td><%= link_to 'Edit', edit_admin_apartment_path(apartment), class: "btn btn-sm btn-info pull-right" %></td>
-                      <td><%= link_to 'Destroy', admin_apartment_path(apartment), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-sm btn-danger pull-right" %></td>
+                      <td><%= link_to 'Edit Unit', edit_admin_apartment_path(apartment), class: "btn btn-sm btn-info pull-right" %></td>
+                      <td><%= link_to 'Destroy Unit', admin_apartment_path(apartment), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-sm btn-danger pull-right" %></td>
                     </tr>
                   <% end %>
                 </tbody>
@@ -49,7 +50,12 @@
         </div>
       </div>
       <div class="widget-foot">
-        <%= link_to "Add Apartment", new_admin_property_apartment_path(@property), class: "btn btn-success" %>
+        <div class="pull-right">
+          <%= link_to content_tag(:i, " Add Unit", class: "fa fa-plus"), new_admin_property_apartment_path(@property), class: "btn btn-info" %>
+          <%= link_to content_tag(:i, " Edit Property", class: "fa fa-edit"), edit_admin_property_path(@property), class: "btn btn-success" %>
+          <%= link_to content_tag(:i, " Delete Property", class: "fa fa-times-circle"), admin_property_path(@property), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+        </div>
+        <div class="clearfix"></div>
       </div>
     </div>
   </div>

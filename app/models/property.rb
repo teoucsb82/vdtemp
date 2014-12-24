@@ -1,5 +1,5 @@
 class Property < ActiveRecord::Base
-  has_many :apartments
+  has_many :apartments, :dependent => :destroy
 
   attr_accessor :description
 
