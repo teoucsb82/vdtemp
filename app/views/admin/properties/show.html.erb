@@ -54,6 +54,8 @@
     </div>
   </div>
 
+  <%= render 'photos' %>
+
   <div class="col-md-12">
     <div class="widget">
       <div class="widget-head">
@@ -62,7 +64,7 @@
       </div>
       <div class="widget-content">
         <div class="padd">
-          <%= @property.description.html_safe %>
+          <%= @property.description.html_safe if @property.description %>
         </div>
       </div>
       <div class="widget-foot">

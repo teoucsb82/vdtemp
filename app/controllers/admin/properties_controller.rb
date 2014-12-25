@@ -8,10 +8,14 @@ class Admin::PropertiesController < ApplicationController
 
   def create
     @property = Property.new(property_params)
-    saved = @property.save
 
-    if saved
+    if @property.save
+      if params[:photos]
+        params[:photos].each { |photo| @property.images.create(photo: photo) }
+      end
+
       @property.update_description(property_params[:description])
+      flash[:notice] = "Property was successfully created."
       redirect_to admin_property_path(@property)
     else
       flash[:alert] = @property.errors.full_messages
@@ -35,6 +39,10 @@ class Admin::PropertiesController < ApplicationController
   def update
     respond_to do |format|
       if @property.update(property_params)
+        if params[:photos]
+          params[:photos].each { |photo| @property.images.create(photo: photo) }
+        end
+
         @property.update_description(property_params[:description])
         format.html { redirect_to admin_property_path(@property), notice: 'Property was successfully updated.' }
         format.json { head :no_content }
@@ -47,7 +55,7 @@ class Admin::PropertiesController < ApplicationController
 
   private
   def property_params
-    params.require(:property).permit(:street_address, :city, :state, :zip, :description)
+    params.require(:property).permit(:street_address, :city, :state, :zip, :description, :photo)
   end
 
   def load_property

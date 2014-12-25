@@ -13,8 +13,8 @@ gem 'bootstrap-sass', '~> 3.2.0'
 gem 'font-awesome-rails'
 gem 'autoprefixer-rails' #add browser vendor prefixes automatically
 
-gem 'carrierwave'
-gem 'cloudinary'
+gem 'paperclip'
+gem 'aws-sdk'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
