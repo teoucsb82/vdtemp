@@ -9,7 +9,7 @@
   <div class="col-md-12">
     <div class="widget">
       <div class="widget-head">
-        <div class="pull-left"><%= @property.description.html_safe %></div>
+        <div class="pull-left">Units</div>
         <div class="clearfix"></div>
       </div>
       <div class="widget-content">
@@ -26,20 +26,16 @@
                     <th>Bathrooms</th>
                     <th>Tenants</th>
                     <th>Availabile</th>
-                    <th></th>
-                    <th></th>
                   </tr>
                 </thead>
                 <tbody>
                   <% @property.apartments.each do |apartment| %>
                     <tr>
-                      <td><%= link_to apartment.unit, admin_apartment_path(apartment) %></td>
+                      <td><%= link_to content_tag(:i, " #{apartment.unit}", class: "fa fa-share"), admin_apartment_path(apartment), class: "btn btn-sm btn-primary full-width" %></td>
                       <td><%= apartment.bedrooms %></td>
                       <td><%= apartment.bathrooms %></td>
                       <td><%= apartment.tenants.size %></td>
                       <td><%= available_colorizer(apartment.available) %></td>
-                      <td><%= link_to 'Edit Unit', edit_admin_apartment_path(apartment), class: "btn btn-sm btn-info pull-right" %></td>
-                      <td><%= link_to 'Destroy Unit', admin_apartment_path(apartment), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-sm btn-danger pull-right" %></td>
                     </tr>
                   <% end %>
                 </tbody>
@@ -52,6 +48,25 @@
       <div class="widget-foot">
         <div class="pull-right">
           <%= link_to content_tag(:i, " Add Unit", class: "fa fa-plus"), new_admin_property_apartment_path(@property), class: "btn btn-info" %>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-12">
+    <div class="widget">
+      <div class="widget-head">
+        <div class="pull-left">Description</div>
+        <div class="clearfix"></div>
+      </div>
+      <div class="widget-content">
+        <div class="padd">
+          <%= @property.description.html_safe %>
+        </div>
+      </div>
+      <div class="widget-foot">
+        <div class="pull-right">
           <%= link_to content_tag(:i, " Edit Property", class: "fa fa-edit"), edit_admin_property_path(@property), class: "btn btn-success" %>
           <%= link_to content_tag(:i, " Delete Property", class: "fa fa-times-circle"), admin_property_path(@property), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
         </div>
@@ -59,4 +74,6 @@
       </div>
     </div>
   </div>
+
+
 </div>

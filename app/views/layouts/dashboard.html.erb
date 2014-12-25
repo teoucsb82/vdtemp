@@ -12,7 +12,7 @@
 
   <%= stylesheet_link_tag    "dashboard", media: "all" %>
   <%= javascript_include_tag "dashboard" %>
-  
+
   <!--[if lt IE 9]>
   <script src="js/html5shiv.js"></script>
   <![endif]-->
@@ -22,14 +22,15 @@
 </head>
 
 <body class="<%= yield :body_class unless :body_class.empty? %>">
-  
+
   <%= render 'admin/dashboards/header' %>
   <div class="content">
     <%= render 'admin/dashboards/sidebar' %>
-    <div class="mainbar">  
+    <div class="mainbar">
       <%= render 'admin/dashboards/breadcrumbs' %>
       <div class="matter">
         <div class="container">
+          <%= render 'layouts/flash' %>
           <%= yield %>
         </div>
       </div>

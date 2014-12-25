@@ -27,10 +27,11 @@ class Admin::ApartmentsController < ApplicationController
     saved = @apartment.save
 
     if saved
-      redirect_to admin_apartment_path(@apartment)
+      flash[:success] = "Apartment successfully created"
+      return redirect_to admin_apartment_path(@apartment)
     else
-      flash[:alert] = @apartment.errors.full_messages
-      render 'new'
+      flash[:alert] = @apartment.errors.full_messages.join(".")
+      return redirect_to new_admin_property_apartment_path(@property, @apartment)
     end
   end
 
