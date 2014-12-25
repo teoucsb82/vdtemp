@@ -24,9 +24,12 @@ class Admin::ApartmentsController < ApplicationController
     @property = Property.find(params[:property_id])
     @apartment = @property.apartments.new(apartment_params)
     @apartment.set_metadata_attributes(params[:metadata])
-    saved = @apartment.save
 
-    if saved
+    if @apartment.save
+      if params[:photos]
+        params[:photos].each { |photo| @apartment.images.create(photo: photo) }
+      end
+
       flash[:notice] = "Apartment successfully created"
       return redirect_to admin_apartment_path(@apartment)
     else
@@ -42,10 +45,14 @@ class Admin::ApartmentsController < ApplicationController
     respond_to do |format|
       if @apartment.update(apartment_params)
         @apartment.set_metadata_attributes(params[:metadata])
+        if params[:photos]
+          params[:photos].each { |photo| @apartment.images.create(photo: photo) }
+        end
+
         format.html { redirect_to admin_apartment_path(@apartment), notice: 'Apartment was successfully updated.' }
         format.json { head :no_content }
       else
-        format.html { render action: 'edit' }
+        format.html { render action: 'edit', :error => @apartment.errors }
         format.json { render json: @apartment.errors, status: :unprocessable_entity }
       end
     end

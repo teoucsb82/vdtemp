@@ -24,7 +24,7 @@
           <br />
 
           <!-- Form starts.  -->
-          <%= form_for([:admin, @apartment], :html => {:class => "form-horizontal"}) do |f| %>
+          <%= form_for([:admin, @apartment], :html => {:class => "form-horizontal", :multipart => true}) do |f| %>
             <div class="form-group">
               <%= f.label :unit, "Unit #", class: "col-lg-2 control-label" %>
 
@@ -152,6 +152,13 @@
                     <input type="radio" name="apartment[available]" value=true  <%= "checked" if @apartment.available? %>> Yes
                   </label>
                 </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <%= f.label :images, :class => "col-lg-2 control-label" %>
+              <div class="col-lg-8">
+                <%= file_field_tag "photos[]", type: :file, multiple: true %>
               </div>
             </div>
 

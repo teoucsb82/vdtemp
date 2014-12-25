@@ -10,6 +10,9 @@
     <div class="widget">
       <div class="widget-head">
         <div class="pull-left">Units</div>
+        <div class="pull-right">
+          <%= link_to content_tag(:i, " Add Unit", class: "fa fa-plus"), new_admin_property_apartment_path(@property), class: "btn btn-info" %>
+        </div>
         <div class="clearfix"></div>
       </div>
       <div class="widget-content">
@@ -46,15 +49,13 @@
         </div>
       </div>
       <div class="widget-foot">
-        <div class="pull-right">
-          <%= link_to content_tag(:i, " Add Unit", class: "fa fa-plus"), new_admin_property_apartment_path(@property), class: "btn btn-info" %>
-        </div>
+
         <div class="clearfix"></div>
       </div>
     </div>
   </div>
 
-  <%= render 'photos' %>
+  <%= render 'photos' unless @property.images.blank? %>
 
   <div class="col-md-12">
     <div class="widget">
@@ -68,13 +69,16 @@
         </div>
       </div>
       <div class="widget-foot">
-        <div class="pull-right">
-          <%= link_to content_tag(:i, " Edit Property", class: "fa fa-edit"), edit_admin_property_path(@property), class: "btn btn-success" %>
-          <%= link_to content_tag(:i, " Delete Property", class: "fa fa-times-circle"), admin_property_path(@property), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
-        </div>
         <div class="clearfix"></div>
       </div>
     </div>
+  </div>
+
+  <div class="col-md-12">
+    <div class="pull-right">
+          <%= link_to content_tag(:i, " Edit Property", class: "fa fa-edit"), edit_admin_property_path(@property), class: "btn btn-success" %>
+          <%= link_to content_tag(:i, " Delete Property", class: "fa fa-times-circle"), admin_property_path(@property), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+        </div>
   </div>
 
 

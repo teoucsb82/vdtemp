@@ -1,10 +1,8 @@
 class Apartment < ActiveRecord::Base
 	has_one :lease
-  has_many :images, :as => :imageable
+  has_many :images, :as => :imageable, :dependent => :destroy
   has_many :tenants, :foreign_key => 'apartment_id', :class_name => "User"
   belongs_to :property
-
-  before_save :ensure_unique_apartment_number
 
 	after_initialize :load_metadata_attributes
 	attr_accessor :rent, :square_footage, :parking,
@@ -43,14 +41,6 @@ class Apartment < ActiveRecord::Base
       results << k if v && !metadata_to_ignore.include?(k.downcase)
     end
     return results
-  end
-
-  def ensure_unique_apartment_number
-    if self.property.apartments.map(&:unit).include?(self.unit)
-      @errors = ActiveModel::Errors.new(self)
-      errors.add(:unit, "#{self.unit} already exists for #{self.property.street_address}!")
-      return false
-    end
   end
 
 	def set_metadata_attributes(params)
