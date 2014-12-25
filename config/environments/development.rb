@@ -31,4 +31,12 @@ Viadeca::Application.configure do
 
   # paperclip
   Paperclip.options[:command_path] = "/usr/local/bin/"
+
+  config.paperclip_defaults = {
+  :storage => :s3,
+  :s3_host_name => 'REMOVE_THIS_LINE_IF_UNNECESSARY',
+  :s3_credentials => {
+    :bucket => 'S3_BUCKET_NAME'
+  }
+}
 end
