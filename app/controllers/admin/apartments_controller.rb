@@ -51,6 +51,9 @@ class Admin::ApartmentsController < ApplicationController
     end
   end
 
+  def add_photos
+  end
+
   def destroy
     @apartment.destroy
     respond_to do |format|
