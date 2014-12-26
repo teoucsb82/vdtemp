@@ -10,7 +10,7 @@
           <br />
 
           <!-- Form starts.  -->
-          <%= form_for([:admin, @property, @apartment], :url => admin_property_apartments_path, :html => {:class => "form-horizontal", :multipart => true}) do |f| %>
+          <%= form_for([:admin, @property, @apartment], :url => admin_property_apartments_path, :html => {:class => "form-horizontal"}) do |f| %>
             <div class="form-group">
               <%= f.label :unit, "Unit #", class: "col-lg-2 control-label" %>
 
@@ -138,13 +138,6 @@
                     <input type="radio" name="apartment[available]" id="option2" autocomplete="off" value=true> Yes
                   </label>
                 </div>
-              </div>
-            </div>
-
-            <div class="form-group">
-              <%= f.label :images, :class => "col-lg-2 control-label" %>
-              <div class="col-lg-8">
-                <%= file_field_tag "photos[]", type: :file, multiple: true %>
               </div>
             </div>
 

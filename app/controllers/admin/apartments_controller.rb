@@ -26,10 +26,6 @@ class Admin::ApartmentsController < ApplicationController
     @apartment.set_metadata_attributes(params[:metadata])
 
     if @apartment.save
-      if params[:photos]
-        params[:photos].each { |photo| @apartment.images.create(photo: photo) }
-      end
-
       flash[:notice] = "Apartment successfully created"
       return redirect_to admin_apartment_path(@apartment)
     else
@@ -45,9 +41,6 @@ class Admin::ApartmentsController < ApplicationController
     respond_to do |format|
       if @apartment.update(apartment_params)
         @apartment.set_metadata_attributes(params[:metadata])
-        if params[:photos]
-          params[:photos].each { |photo| @apartment.images.create(photo: photo) }
-        end
 
         format.html { redirect_to admin_apartment_path(@apartment), notice: 'Apartment was successfully updated.' }
         format.json { head :no_content }
