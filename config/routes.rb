@@ -14,9 +14,9 @@ Viadeca::Application.routes.draw do
   end
 
   resources :pages, :only => [:index]
-  resources :apartments
-
-
+  resources :contacts, :only => [:index, :create]
+  resources :background_checks, :only => [:create]
+  get '/applications' => 'background_checks#new', as: 'new_background_check'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

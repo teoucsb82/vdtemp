@@ -23,49 +23,25 @@
            
           <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
             <ul class="nav navbar-nav navbar-right">
-              <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Home <b class="caret"></b></a>
-              <ul class="dropdown-menu">
-                 <li><a href="index.html">Home #1</a></li>
-                 <li><a href="index1.html">Home #2</a></li>
-                 <li><a href="index-rslider.html">Home #3</a></li>
-              </ul>
-              </li>
-              <li class="dropdown">
-               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages <b class="caret"></b></a>
-               <ul class="dropdown-menu">
-                 <li><a href="404-1.html">404</a></li>
-                 <li><a href="about1.html">About</a></li>
-                 <li><a href="faq.html">FAQ</a></li>
-                 <li><a href="features2.html">Features</a></li>
-                 <li><a href="login.html">Login</a></li>
-                 <li><a href="faq.html">FAQ</a></li>
-                 <li><a href="pricing1.html">Pricing Table</a></li>
-                 <li><a href="process.html">Process</a></li>
-                 <li><a href="project.html">Project</a></li>
-                 <li><a href="register.html">Register</a></li>
-                 <li><a href="support.html">Support</a></li>
-                 <li><a href="testimonials.html">Testimonials</a></li>
-               </ul>
-              </li>                   
-              
-              <li><a href="service2.html">Service</a></li>
-              <li><a href="resume.html">Resume</a></li>
-              <li class="dropdown">
-               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Blog <b class="caret"></b></a>
-               <ul class="dropdown-menu">
-                 <li><a href="blog1.html">Blog</a></li>
-                 <li><a href="blog3.html">Blog Box</a></li>
-                 <li><a href="blog-3col.html">Blog 3 Column</a></li>
-                 <li><a href="blog-single.html">Blog Single</a></li>
-               </ul>
-               </li>
+              <li><%= link_to "Availabilties", contacts_path %></li>
+              <li><%= link_to "Submit Application", new_background_check_path %></li>
+              <li><%= link_to "Contact Us", contacts_path %></li>
               <% if user_signed_in? %>
-                <li><%= link_to 'Edit profile', edit_user_registration_path %></li>
-                <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">My Account <b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                    <li><%= link_to 'Edit profile', edit_user_registration_path %></li>
+                    <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+                  </ul>
+                </li>
               <% else %>
-                <li><%= link_to "Sign up", new_user_registration_path %></li>
-                <li><%= link_to "Login", new_user_session_path %></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Tenants <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                      <li><%= link_to "Sign up", new_user_registration_path %></li>
+                      <li><%= link_to "Login", new_user_session_path %></li>
+                    </ul>
+                  </li>
               <% end %>
             </ul>
           </nav>

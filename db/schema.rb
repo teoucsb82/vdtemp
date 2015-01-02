@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141225064110) do
+ActiveRecord::Schema.define(version: 20150101024250) do
 
   create_table "apartments", force: true do |t|
     t.string   "unit",                        null: false
@@ -25,10 +25,31 @@ ActiveRecord::Schema.define(version: 20141225064110) do
     t.integer  "property_id"
   end
 
+  create_table "background_checks", force: true do |t|
+    t.integer  "apartment_id",                   null: false
+    t.string   "name",                           null: false
+    t.string   "email",                          null: false
+    t.text     "personal_info"
+    t.text     "address_info"
+    t.text     "employer_info"
+    t.text     "vehickle_info"
+    t.boolean  "acknowledgment", default: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "background_checks", ["email"], name: "index_background_checks_on_email", unique: true
+
+  create_table "contacts", force: true do |t|
+    t.string   "name",       null: false
+    t.string   "email",      null: false
+    t.text     "content",    null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "images", force: true do |t|
-    t.string   "title"
-    t.text     "description"
-    t.boolean  "active",             default: false
+    t.string   "name"
     t.integer  "imageable_id"
     t.string   "imageable_type"
     t.datetime "created_at"

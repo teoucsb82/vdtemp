@@ -1,0 +1,40 @@
+<!-- Page content starts -->
+<div class="content ">
+  <div class="container">
+    <div class="row"> 
+      <div class="col-md-12">
+        <!-- Contact form -->
+        <h4 class="title">Application Form</h4>
+        <%= form_for(@background_check, :html => { class: "form-horizontal" }) do |f| %>
+          <div class="form-group">
+            <table>
+              <td>
+                <%= f.collection_select(:property, @properties, :id, :street_address, {:prompt => "Select Property"}, { :class=>'form-control'}) %>
+              </td>
+              <td width="10%"></td>
+              <td>
+                <% @properties.each do |property| %>
+                  <%= f.collection_select(:apartment_id, property.apartments.available, :id, :unit, {:prompt => "Select Apartment"}, { :class=>'form-control hidden', :id => "apartment#{property.id}"}) %>
+                <% end %>
+              </td>
+            </table>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :name %>
+            <%= f.text_field :name, class: "form-control" %>
+          </div>                                    
+          <div class="form-group">
+            <%= f.label :email %>
+            <%= f.text_field :email, class: "form-control" %>
+          </div>                               
+          <button type="submit" class="btn btn-primary">Send</button>
+          <button type="reset" class="btn btn-default">Reset</button>
+        <% end %>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Page content ends -->

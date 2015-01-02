@@ -5,4 +5,8 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   belongs_to :apartment
+
+  def self.admin
+    return User.where(:admin => true)
+  end
 end

@@ -1,4 +1,6 @@
 class Apartment < ActiveRecord::Base
+  scope :available, -> { where(available: true) }
+  
 	has_one :lease
   has_many :images, :as => :imageable, :dependent => :destroy
   has_many :tenants, :foreign_key => 'apartment_id', :class_name => "User"
