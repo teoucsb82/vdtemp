@@ -4,7 +4,7 @@ class CreateApartments < ActiveRecord::Migration
 			t.string :unit, :null => false
       t.integer :bedrooms, :null => false
       t.float :bathrooms, :null => false
-      t.text :description
+      t.text :description, :null => false, :default => ""
       t.text :metadata
       t.boolean :available, :default => false
 

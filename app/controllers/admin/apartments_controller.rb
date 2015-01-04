@@ -35,6 +35,11 @@ class Admin::ApartmentsController < ApplicationController
   end
 
   def show
+    # @images = @apartment.images
+    # respond_to do |format|
+    #   format.js { render :json => @images.collect { |p| p.to_jq_upload }.to_json }
+    #   format.html
+    # end
   end
 
   def update
@@ -52,6 +57,32 @@ class Admin::ApartmentsController < ApplicationController
   end
 
   def add_photos
+    @apartment = Apartment.find(params[:apartment_id])
+
+    p_attr = params[:image]
+    p_attr[:photo] = params[:image][:photo].first if params[:image][:photo].class == Array
+
+    @image = @apartment.images.new(image_params)
+
+    respond_to do |format|
+      if @image.save
+        format.html {
+          render :json => [@image.to_jq_upload].to_json,
+          :content_type => 'text/html',
+          :layout => false
+        }
+        format.json { render json: {files: [@image.to_jq_upload]}, status: :created }
+      else
+        format.html { render action: "show" }
+        format.json { render json: @image.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  def photos
+    @apartment = Apartment.find(params[:apartment_id])
+    @images = @apartment.images
+    render :json => @images.collect { |i| i.to_jq_upload }.to_json
   end
 
   def destroy
@@ -61,9 +92,19 @@ class Admin::ApartmentsController < ApplicationController
     end
   end
 
+  def destroy_photo
+    @image = Image.find(params[:id])
+    @image.destroy
+    render :json => true
+  end
+
   private
   def apartment_params
     params.require(:apartment).permit(:description, :bedrooms, :bathrooms, :unit, :metadata, :available)
+  end
+
+  def image_params
+    params.require(:image).permit(:photo)
   end
 
   def load_apartment

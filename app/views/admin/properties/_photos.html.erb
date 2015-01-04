@@ -14,7 +14,7 @@
           <!-- Full size image link in anchor tag. Thumbnail link in image tag. -->
           <% @property.images.each do |image| %>
             <%= link_to image.photo.url, :class => "prettyPhoto[pp_gal]" do %>
-              <%= image_tag image.photo.url(:thumb) %>
+              <%= image_tag image.photo.url(:thumbnail) %>
             <% end %>
           <% end %>
         </div>

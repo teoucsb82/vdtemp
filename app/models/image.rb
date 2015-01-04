@@ -1,8 +1,17 @@
 class Image < ActiveRecord::Base
+  include Rails.application.routes.url_helpers
   belongs_to :imageable, polymorphic: true
+  mount_uploader :photo, PhotoUploader
 
-  has_attached_file :photo, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/images/:style/missing.png"
-  validates_attachment_content_type :photo, :content_type => /\Aimage\/.*\Z/
-  validates_attachment_size :photo, :less_than => 5.megabytes
-  validates_attachment_content_type :photo, :content_type => ['image/jpg', 'image/jpeg', 'image/png']
+  def to_jq_upload
+    host = Rails.env.production? ? "www.viadeca.com" : "localhost:3000"
+    {
+      "name" => read_attribute(:photo),
+      "size" => photo.size,
+      "url" => photo.url,
+      "thumbnail_url" => photo.thumbnail.url,
+      "delete_url" => admin_apartment_apartment_destroy_photo_url(:apartment_id => self.imageable_id, :id => id, :host => host ),
+      "delete_type" => "DELETE"
+    }
+  end
 end

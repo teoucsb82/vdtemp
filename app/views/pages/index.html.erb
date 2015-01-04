@@ -1,61 +1,121 @@
 <%= content_for :body_class do %>page-js<% end %>
-<!-- Flex Slider starts -->
-<div class="container flex-main">
-  <div class="row">
-	<div class="col-md-12">
+<div class="row">
+  <div class="col-sm-5 hidden-xs home_form">
+    <div class="col-sm-12 well lform" style="height: 326px;">
+      <div class="row">
+        <%= form_tag '/search', :class => "form-vertical" do |f| %>
+          <fieldset>
+          <div class="col-sm-12">
+            <div class="form-group">
+              <label>Location</label>
+              <input type="text" class="form-control" placeholder="Where do you want to live?">
+            </div>
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label>Search radius:</label>
+                  <select class="form-control">
+                    <option>This area only</option>
+                    <option>Within 1/4 mile</option>
+                    <option>Within 1/2 mile</option>
+                    <option>Within 1 mile</option>
+                    <option>Within 3 miles</option>
+                    <option>Within 5 miles</option>
+                    <option>Within 10 miles</option>
+                    <option>Within 15 miles</option>
+                    <option>Within 20 miles</option>
+                    <option>Within 30 miles</option>
+                    <option>Within 40 miles</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label>Property type:</label>
+                  <select class="form-control">
+                    <option>Any</option>
+                    <option>Houses</option>
+                    <option>Flats/ Apartments</option>
+                    <option>Bungalows</option>
+                    <option>Land</option>
+                    <option>Commercial property</option>
+                    <option>Other</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label>Bedrooms:</label>
+                  <select class="form-control">
+                    <option>Any</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5+</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label>Rent or Buy</label>
+                  <select class="form-control">
+                    <option>Any</option>
+                    <option>Rent</option>
+                    <option>Buy</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="row hidden-sm">
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label>Minimum Price</label>
+                  <select class="form-control">
+                    <option selected="selected" value="">No min</option><option value="50000">50,000</option><option value="60000">60,000</option><option value="70000">70,000</option><option value="80000">80,000</option><option value="90000">90,000</option><option value="100000">100,000</option><option value="110000">110,000</option><option value="120000">120,000</option><option value="125000">125,000</option><option value="130000">130,000</option><option value="140000">140,000</option><option value="150000">150,000</option><option value="160000">160,000</option><option value="170000">170,000</option><option value="175000">175,000</option><option value="180000">180,000</option><option value="190000">190,000</option><option value="200000">200,000</option><option value="210000">210,000</option><option value="220000">220,000</option><option value="230000">230,000</option><option value="240000">240,000</option><option value="250000">250,000</option><option value="260000">260,000</option><option value="270000">270,000</option><option value="280000">280,000</option><option value="290000">290,000</option><option value="300000">300,000</option><option value="325000">325,000</option><option value="350000">350,000</option><option value="375000">375,000</option><option value="400000">400,000</option><option value="425000">425,000</option><option value="450000">450,000</option><option value="475000">475,000</option><option value="500000">500,000</option><option value="550000">550,000</option><option value="600000">600,000</option><option value="650000">650,000</option><option value="700000">700,000</option><option value="800000">800,000</option><option value="900000">900,000</option><option value="1000000">1,000,000</option><option value="1500000">1,500,000</option><option value="2000000">2,000,000</option><option value="3000000">3,000,000</option><option value="">No min</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label>Maximum Price</label>
+                  <select class="form-control">
+                    <option selected="selected" value="">No min</option><option value="50000">50,000</option><option value="60000">60,000</option><option value="70000">70,000</option><option value="80000">80,000</option><option value="90000">90,000</option><option value="100000">100,000</option><option value="110000">110,000</option><option value="120000">120,000</option><option value="125000">125,000</option><option value="130000">130,000</option><option value="140000">140,000</option><option value="150000">150,000</option><option value="160000">160,000</option><option value="170000">170,000</option><option value="175000">175,000</option><option value="180000">180,000</option><option value="190000">190,000</option><option value="200000">200,000</option><option value="210000">210,000</option><option value="220000">220,000</option><option value="230000">230,000</option><option value="240000">240,000</option><option value="250000">250,000</option><option value="260000">260,000</option><option value="270000">270,000</option><option value="280000">280,000</option><option value="290000">290,000</option><option value="300000">300,000</option><option value="325000">325,000</option><option value="350000">350,000</option><option value="375000">375,000</option><option value="400000">400,000</option><option value="425000">425,000</option><option value="450000">450,000</option><option value="475000">475,000</option><option value="500000">500,000</option><option value="550000">550,000</option><option value="600000">600,000</option><option value="650000">650,000</option><option value="700000">700,000</option><option value="800000">800,000</option><option value="900000">900,000</option><option value="1000000">1,000,000</option><option value="1500000">1,500,000</option><option value="2000000">2,000,000</option><option value="3000000">3,000,000</option><option value="">No min</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
 
-			<div class="flex-image flexslider">
-			  <ul class="slides">
-				  <!-- Each slide should be enclosed inside li tag. -->
+            <div class="row">
+              <div class="col-sm-12" style="margin-top: 10px;">
+                <button class="btn btn-primary full-width" type="submit">Search</button>
+              </div>
+            </div>
+          </fieldset>
+        <% end %>
+      </div>
+    </div>
+  </div>
 
-				  <!-- Slide #1 -->
-				<li>
-				  <!-- Image -->
-				  <img src="img/photos/l1.jpg" alt="" />
-				  <!-- Caption -->
-				  <div class="flex-caption">
-					 <!-- Title -->
-					 <h3>God's Own Theme</h3>
-					 <!-- Para -->
-					 <p>Ut commodo ullamcorper risus nec mattis. Fusce imperdiet ornare dignissim. Donec aliquet convallis tortor, et placerat quam posuere posuere. Morbi tincidunt posuere turpis eu laoreet. </p>
-				  </div>
-				</li>
-
-				  <!-- Slide #2 -->
-				<li>
-				  <img src="img/photos/l2.jpg" alt="" />
-				  <div class="flex-caption">
-					 <h3>Powerful and Professional</h3>
-					 <p>Ut commodo ullamcorper risus nec mattis. Fusce imperdiet ornare dignissim. Donec aliquet convallis tortor, et placerat quam posuere posuere. Morbi tincidunt posuere turpis eu laoreet. </p>
-				  </div>
-				</li>
-
-				<li>
-				  <img src="img/photos/l3.jpg" alt="" />
-				  <div class="flex-caption">
-					 <h3>Its a Revolution</h3>
-					 <p>Ut commodo ullamcorper risus nec mattis. Fusce imperdiet ornare dignissim. Donec aliquet convallis tortor, et placerat quam posuere posuere. Morbi tincidunt posuere turpis eu laoreet. </p>
-				  </div>
-				</li>
-
-				<li>
-				  <img src="img/photos/l4.jpg" alt="" />
-				  <div class="flex-caption">
-					 <h3>Lowest Price in Market</h3>
-					 <p>Ut commodo ullamcorper risus nec mattis. Fusce imperdiet ornare dignissim. Donec aliquet convallis tortor, et placerat quam posuere posuere. Morbi tincidunt posuere turpis eu laoreet. </p>
-				  </div>
-				</li>
-
-			  </ul>
-			</div>
-
-	</div>
+  <div class="col-md-7 col-sm-7 col-xs-12 no_margin_left home_carousel">
+    <div class="flex-image flexslider">
+      <ul class="slides">
+        <% @apartments.each do |apartment| %>
+          <li>
+            <%= cl_image_tag(apartment.images.sample.photo.carousel) %>
+            <div class="flex-caption">
+             <h3><%= "#{apartment.property.street_address}, Apt #{apartment.unit}" %></h3>
+             <%= content_tag(:p, apartment.description) unless apartment.description.blank? %>
+            </div>
+          </li>
+        <% end %>
+      </ul>
+    </div>
   </div>
 </div>
-
-<!-- Flex slider ends -->
-
-<%= render 'search' %>
 
 <!-- Service style #1 starts -->
 

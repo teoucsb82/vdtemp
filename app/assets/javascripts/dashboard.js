@@ -13,7 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap
-//= require jquery-fileupload
 //= require ./dashboard/bootstrap-datetimepicker.min
 //= require ./dashboard/charts
 //= require ./dashboard/dashboard
@@ -35,3 +34,4 @@
 //= require ./dashboard/jquery.slimscroll.min
 //= require ./dashboard/respond.min
 //= require ./dashboard/sparklines
+//= require jquery-fileupload

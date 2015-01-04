@@ -1,6 +1,6 @@
 class Apartment < ActiveRecord::Base
   scope :available, -> { where(available: true) }
-  
+
 	has_one :lease
   has_many :images, :as => :imageable, :dependent => :destroy
   has_many :tenants, :foreign_key => 'apartment_id', :class_name => "User"
@@ -38,7 +38,7 @@ class Apartment < ActiveRecord::Base
     results = []
     metadata_to_ignore = ["rent", "square_footage", "parking"]
 
-    meta = JSON.parse(self.metadata)
+    meta = self.metadata ? JSON.parse(self.metadata) : []
     meta.each do |k, v|
       results << k if v && !metadata_to_ignore.include?(k.downcase)
     end

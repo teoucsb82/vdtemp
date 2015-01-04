@@ -5,8 +5,13 @@
       <div class="col-md-4 col-sm-3">
         <!-- Logo. Use class "color" to add color to the text. -->
         <div class="logo">
-        <h1><a href="<%= root_url %>">Via<span class="color bold">Deca</span></a></h1>
-        <p class="meta">Santa Monica Apartments</p>
+          <div class="row">
+            <div class="col-xs-4 col-lg-3"><%= content_tag(:i, "", class: "fa fa-home fa-5x color") %></div>
+            <div class="col-xs-8 col-lg-9">
+              <h1><a href="<%= root_url %>">Via<span class="color bold">Deca</span></a></h1>
+              <p class="meta">Santa Monica Apartments</p>
+            </div>
+          </div>
         </div>
       </div>
       <div class="col-md-8 col-sm-9">
@@ -20,7 +25,7 @@
               <span class="icon-bar"></span>
             </button>
           </div>
-           
+
           <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
             <ul class="nav navbar-nav navbar-right">
               <li><%= link_to "Availabilties", contacts_path %></li>

@@ -7,7 +7,9 @@ Viadeca::Application.routes.draw do
     get '/charts' => 'dashboards#charts'
     resources :properties do
       resources :apartments, shallow: true do
+        get '/photos' => 'apartments#photos'
         post '/photos' => 'apartments#add_photos'
+        delete '/destroy_photo' => 'apartments#destroy_photo'
         resources :tenants, shallow: true
       end
     end

@@ -1,6 +1,6 @@
 class BackgroundChecksController < ApplicationController
   def new
-    @properties = Property.available
+    @properties = Property.all
     @background_check = BackgroundCheck.new
   end
 
