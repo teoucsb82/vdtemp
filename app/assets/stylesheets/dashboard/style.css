@@ -3,7 +3,7 @@
 /* Website : http://responsivewebinc.com
 ****************************/
 
-body.page-dashboard{
+body{
 	font-size: 12px;
 	line-height: 22px;
 	color: #666;
@@ -14,60 +14,60 @@ body.page-dashboard{
 }
 
 
-body.page-dashboard h1,h2,h3,h4,h5,h6{
+h1,h2,h3,h4,h5,h6{
 	padding: 2px 0px;
 	margin: 2px 0px;
 	color: #777;
 }
 
-body.page-dashboard h2{
+h2{
 	font-size: 25px;
 	line-height: 35px;
 }
 
-body.page-dashboard h3{
+h3{
 	font-size: 18px;
 	line-height: 23px;
 }
 
-body.page-dashboard h4{
+h4{
 	font-size: 15px;
 	line-height: 20px;
 }
 
-body.page-dashboard h5{
+h5{
 	font-size: 13px;
 	line-height: 18px;
 }
 
-body.page-dashboard h6{
+h6{
 	font-size: 12px;
 	line-height: 17px;
 }
 
-body.page-dashboard p{
+p{
 	padding: 0px;
 	margin:0px;
 }
 
-body.page-dashboard a{
+a{
 	color: #026b9c;
 }
 
-body.page-dashboard a:hover{
+a:hover{
 	color: #003f5c;
 	text-decoration: none;
 }
 
-body.page-dashboard a:hover,a:active,a:focus {
+a:hover,a:active,a:focus {
 	outline: 0;
 }
 
-body.page-dashboard .bold{
+.bold{
 	font-weight: bold;
 }
 
-body.page-dashboard hr{
+hr{
 margin:15px 0px 10px 0px;
 padding:0px;
 border-top:0px;
@@ -75,41 +75,41 @@ border-bottom:1px solid #f4f4f4;
 height:0px;
 }
 
-body.page-dashboard .center{
+.center{
 text-align:center;
 }
 
-body.page-dashboard a:hover,a:active,a:focus {
+a:hover,a:active,a:focus {
 outline: 0;
 }
 
-body.page-dashboard :focus {
+:focus {
 	outline:none;
 }
 
-body.page-dashboard ::-moz-focus-inner {
+::-moz-focus-inner {
 	border:0;
 }
 
-body.page-dashboard .badge{
+.badge{
 	padding-left: 7px !important;
 	padding-right: 7px !important;
 }
 
-body.page-dashboard .well{
+.well{
 	padding:10px 15px;
 }
 
-body.page-dashboard button.close{
+button.close{
 	font-size: 20px !important;
 	font-weight: normal;
 }
 
-body.page-dashboard button{
+button{
 	font-size: 11px;
 }
 
-body.page-dashboard .progress{
+.progress{
 	height: 15px;
 	border-radius: 6px;
 	margin: 15px 0px !important;
@@ -117,42 +117,42 @@ body.page-dashboard .progress{
    background:#eee;
 }
 
-body.page-dashboard .progress-bar{
+.progress-bar{
 	font-size:11px !important;
 	line-height:16px !important;
 }
 
-body.page-dashboard i.ipad{
+i.ipad{
 	margin-right: 2px;
 }
 
-body.page-dashboard .bblue{
+.bblue{
 	background:#5eb2d9;
 }
 
-body.page-dashboard .bbrown{
+.bbrown{
 	background:#b46e4c;
 }
 
-body.page-dashboard .bgreen{
+.bgreen{
 	background: #4ac344;
 }
 
-body.page-dashboard .borange{
+.borange{
 	background:#ff8421;
 }
 
-body.page-dashboard .bred{
+.bred{
 	background: #ff5d5e;
 }
 
-body.page-dashboard .byellow{
+.byellow{
 	background: #d7a443;
 }
 
 /* Sparkline tooltip */
 
-body.page-dashboard .jqstooltip {
+.jqstooltip {
   width: auto !important;
   height: auto !important;
   border-radius: 5px;
@@ -163,29 +163,29 @@ body.page-dashboard .jqstooltip {
 
 /* Form */
 
-body.page-dashboard form{
+form{
 	margin: 0px;
 }
 
-body.page-dashboard .input-group-width{
+.input-group-width{
 	max-width:250px;
 }
 
 /* Modal */
 
-body.page-dashboard .modal-header{
+.modal-header{
 	padding-top:7px;
 	padding-bottom: 7px;
 }
 
 /* Social */
 
-body.page-dashboard .social{
+.social{
 font-size:16px;
 margin: 5px 0px;
 }
 
-body.page-dashboard .social i{
+.social i{
 box-shadow:inset 0px 0px 1px #333;
 height:25px;
 width:25px;
@@ -200,27 +200,27 @@ transition:background 1s ease;
 text-align:center;
 }
 
-body.page-dashboard .social i.facebook{
+.social i.facebook{
 background:#3c5b9b;
 }
 
-body.page-dashboard .social i.twitter{
+.social i.twitter{
 background:#2daae1;
 }
 
-body.page-dashboard .social i.google-plus{
+.social i.google-plus{
 background:#f63e28;
 }
 
-body.page-dashboard .social i.pinterest{
+.social i.pinterest{
 background:#cb2027;
 }
 
-body.page-dashboard .social i.linkedin{
+.social i.linkedin{
 background:#0173b2;
 }
 
-body.page-dashboard .social i:hover{
+.social i:hover{
 background:#000;
 -webkit-transition:background 1s ease;
 -moz-transition:background 1s ease;
@@ -228,14 +228,14 @@ background:#000;
 transition:background 1s ease;
 }
 
-body.page-dashboard .social a,.social a:visited,.social a:hover{
+.social a,.social a:visited,.social a:hover{
 color:#fff;
 text-decoration:none;
 }
 
 /* Back to top */
 
-body.page-dashboard .totop {
+.totop {
 	position: fixed;
 	bottom: 0px;
 	right: 0px;
@@ -243,7 +243,7 @@ body.page-dashboard .totop {
 	background: #0993d3 !important;
 }
 
-body.page-dashboard .totop a, .totop a:visited{
+.totop a, .totop a:visited{
 	display: block;
 	width: 30px;
 	height: 30px;
@@ -252,28 +252,28 @@ body.page-dashboard .totop a, .totop a:visited{
 	line-height: 30px;
 }
 
-body.page-dashboard .totop a:hover {
+.totop a:hover {
 	color: #eee;
 	text-decoration: none;
 }
 
 /* Image alignment*/
 
-body.page-dashboard .alignleft, img.alignleft {
+.alignleft, img.alignleft {
 	margin-right: 8px;
 	margin-top:5px;
 	display: inline;
 	float: left;
 }
 
-body.page-dashboard .alignright, img.alignright {
+.alignright, img.alignright {
 	margin-left: 8px;
 	margin-top:5px;
 	display: inline;
 	float: right;
 }
 
-body.page-dashboard .aligncenter, img.aligncenter {
+.aligncenter, img.aligncenter {
 	margin-right: auto;
 	margin-left: auto;
 	display: block;
@@ -283,34 +283,34 @@ body.page-dashboard .aligncenter, img.aligncenter {
 
 /* Half column */
 
-body.page-dashboard .mcol-left{
+.mcol-left{
 	width: 48%;
 	float: left;
 }
 
-body.page-dashboard .mcol-right{
+.mcol-right{
 	width: 48%;
 	float: right;
 }
 
-body.page-dashboard .col-left{
+.col-left{
 	width: 48%;
 	float: left;
 }
 
-body.page-dashboard .col-right{
+.col-right{
 	width: 48%;
 	float: right;
 }
 
 /* Dropdown menu */
 
-body.page-dashboard .dropdown-big .dropdown-menu{
+.dropdown-big .dropdown-menu{
 	min-width: 230px;
 	padding:8px 10px;
 }
 
-body.page-dashboard .dropdown-big .dropdown-menu p{
+.dropdown-big .dropdown-menu p{
 	margin: 0px 0px;
 	padding: 1px 0px;
 	font-size: 11px;
@@ -318,7 +318,7 @@ body.page-dashboard .dropdown-big .dropdown-menu p{
 	color:#999;
 }
 
-body.page-dashboard .dropdown-big .dropdown-menu a, .dropdown-big .dropdown-menu a:hover{
+.dropdown-big .dropdown-menu a, .dropdown-big .dropdown-menu a:hover{
 	line-height: 16px;
 	font-size: 12px;
 	background:transparent;
@@ -326,58 +326,58 @@ body.page-dashboard .dropdown-big .dropdown-menu a, .dropdown-big .dropdown-menu
 	color: #777;
 }
 
-body.page-dashboard .dropdown-big .dropdown-menu a:hover{
+.dropdown-big .dropdown-menu a:hover{
 	color: #777;
 }
 
-body.page-dashboard .dropdown-big .dropdown-menu .drop-foot{
+.dropdown-big .dropdown-menu .drop-foot{
 	text-align: center;
 }
 
-body.page-dashboard .dropdown-big .dropdown-menu .drop-foot a{
+.dropdown-big .dropdown-menu .drop-foot a{
 	font-size: 11px !important;
 	color:#777;
 }
 
-body.page-dashboard .dropdown-big .dropdown-menu hr{
+.dropdown-big .dropdown-menu hr{
 	padding:0px;
 	margin: 8px 0px;
 	border-top: 0px solid #aaa;
 	border-bottom: 1px solid #eee;
 }
 
-body.page-dashboard .dropdown-big .dropdown-menu i{
+.dropdown-big .dropdown-menu i{
 	position: relative;
 }
 
-body.page-dashboard .dropdown-big .dropdown-menu h5{
+.dropdown-big .dropdown-menu h5{
 	color: #888 !important;
 	line-height: 18px;
 	font-weight: bold;
 	font-size: 13px;
 }
 
-body.page-dashboard .dropdown-big .dropdown-menu h6, .dropdown-big .dropdown-menu h6 a{
+.dropdown-big .dropdown-menu h6, .dropdown-big .dropdown-menu h6 a{
 	color: #888 !important;
 	font-size: 12px;
 	line-height: 14px !important;
 	font-weight: normal;
 }
 
-body.page-dashboard .dropdown-big .dropdown-menu h6 a:hover{
+.dropdown-big .dropdown-menu h6 a:hover{
 	color: #555 !important;
 	text-decoration: none;
 }
 
-body.page-dashboard .dropdown-big .dropdown-menu li{
+.dropdown-big .dropdown-menu li{
 	line-height: 15px;
 }
 
-body.page-dashboard .dropdown-big .dropdown-menu li p{
+.dropdown-big .dropdown-menu li p{
    padding:5px 0px;
 }
 
-body.page-dashboard .dropdown-menu {
+.dropdown-menu {
     background:#fafafa;
     border-radius: 4px;
     border: 1px solid #ddd;
@@ -385,36 +385,36 @@ body.page-dashboard .dropdown-menu {
     box-shadow: inset 0px 1px 2px #fff;
 }
 
-body.page-dashboard .dropdown-menu li{
+.dropdown-menu li{
 	color: #777;
 	font-size: 12px;
 	line-height: 18px;
 }
 
-body.page-dashboard .dropdown-menu li > a{
+.dropdown-menu li > a{
 	color: #000;
 	line-height: 25px;
 }
 
-body.page-dashboard .dropdown-menu li > a:hover{
+.dropdown-menu li > a:hover{
 	background: #f3f3f3 !important;
 	filter:none;
 	color: #777;
 }
 
-body.page-dashboard .dropdown-menu .progress{
+.dropdown-menu .progress{
 	height:8px;
 }
 
 /* Navbar */
 
-body.page-dashboard .navbar *{
+.navbar *{
 	font-weight: normal !important;
 	text-shadow:none !important;
 
 }
 
-body.page-dashboard .navbar{
+.navbar{
 	background-color: #f8f8f8;
   background: -webkit-gradient(linear, left top, left bottom, from(#f8f8f8), to(#f2f2f2));
   background: -webkit-linear-gradient(top, #f8f8f8, #f2f2f2);
@@ -427,61 +427,61 @@ body.page-dashboard .navbar{
   box-shadow: inset 0px 1px 1px #fff;
 }
 
-body.page-dashboard .navbar .caret{
+.navbar .caret{
 	border-top-color: #666;
     border-bottom-color: #666;
 }
 
-body.page-dashboard .navbar-brand{
+.navbar-brand{
    color:#777;
    font-size:23px;
    font-weight:bold;
    padding-top:20px;
 }
 
-body.page-dashboard .navbar-brand:hover{
+.navbar-brand:hover{
    color:#777;
 }
 
-body.page-dashboard .navbar-toggle{
+.navbar-toggle{
 	background:#f2f2f2;
 	border:1px solid #ccc;
 	border-radius:4px;
 }
 
-body.page-dashboard .navbar-toggle:hover{
+.navbar-toggle:hover{
 	background:#ddd;
 }
 
-body.page-dashboard .navbar li a{
+.navbar li a{
 	font-size: 12px !important;
 	color:#777;
 }
 
-body.page-dashboard .navbar li a:hover{
+.navbar li a:hover{
 
 	color:#000;
 }
 
-body.page-dashboard .navbar i{
+.navbar i{
 	margin-right: 4px;
 }
 
-body.page-dashboard .navbar .btn{
+.navbar .btn{
 	color: #666 !important;
 }
 
-body.page-dashboard .navbar .label{
+.navbar .label{
 	padding:5px 7px !important;
    font-size:11px;
    border-radius:10px;
 }
 
-body.page-dashboard .navbar .label i{
+.navbar .label i{
 	margin-right: 0px;
 }
 
-body.page-dashboard .navbar .progress{
+.navbar .progress{
 	margin-bottom: 0px;
 	padding: 0px !important;
 	margin: 0px !important;
@@ -489,44 +489,44 @@ body.page-dashboard .navbar .progress{
 
 /* Header */
 
-body.page-dashboard header{
+header{
 	border-top: 1px solid #ccc;
 	padding: 25px 0px 15px 0px;
 	background: #fafafa url("../dashboard/img/cream.png") repeat;
 	border-bottom: 1px solid #ddd;
 }
 
-body.page-dashboard header .container {
+header .container {
 	width:100%;
 	max-width: 100%;
 }
 
-body.page-dashboard header .logo{
+header .logo{
 	margin-top: 0px;
 	margin-bottom: 10px;
 	padding-left: 10px;
 }
 
-body.page-dashboard header .logo h1 a, header .logo h1 a:visited, header .logo h1 a:hover{
+header .logo h1 a, header .logo h1 a:visited, header .logo h1 a:hover{
 	font-size: 35px;
 	color: #777;
 	text-decoration: none;
 	font-weight: normal;
 }
 
-body.page-dashboard header .logo .meta{
+header .logo .meta{
 	color: #888;
 	line-height: 15px;
 	padding: 0px;
 	margin: 0px;
 }
 
-body.page-dashboard header .nav.nav-pills{
+header .nav.nav-pills{
 	margin-bottom: 10px;
 	margin-top: 15px;
 }
 
-body.page-dashboard header .nav.nav-pills > li > a{
+header .nav.nav-pills > li > a{
   color: #666;
   text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
   background-color: #f5f5f5;
@@ -551,7 +551,7 @@ body.page-dashboard header .nav.nav-pills > li > a{
   padding:7px 14px;
 }
 
-body.page-dashboard header .nav.nav-pills > li > a:hover, header .nav.nav-pills > li > a:focus{
+header .nav.nav-pills > li > a:hover, header .nav.nav-pills > li > a:focus{
   color: #444;
   background-color: #e6e6e6;
   *background-color: #d9d9d9;
@@ -564,7 +564,7 @@ body.page-dashboard header .nav.nav-pills > li > a:hover, header .nav.nav-pills 
   transition: background-position 0.1s linear;
 }
 
-body.page-dashboard header .nav.nav-pills > li > a span{
+header .nav.nav-pills > li > a span{
    border-radius:40px;
    padding:4px 6px;
    font-size:11px;
@@ -572,7 +572,7 @@ body.page-dashboard header .nav.nav-pills > li > a span{
    text-shadow:none !important;
 }
 
-body.page-dashboard header .nav-pills .open .dropdown-toggle{
+header .nav-pills .open .dropdown-toggle{
   color: #444;
   background-color: #e6e6e6;
   *background-color: #d9d9d9;
@@ -584,17 +584,17 @@ body.page-dashboard header .nav-pills .open .dropdown-toggle{
   transition: background-position 0.1s linear;
 }
 
-body.page-dashboard header .header-data{
+header .header-data{
 	margin-top: 15px;
 }
 
-body.page-dashboard header .header-data .hdata{
+header .header-data .hdata{
 	display: inline-block;
 	width: 85px;
 	margin-right: 15px;
 }
 
-body.page-dashboard header .header-data .hdata i{
+header .header-data .hdata i{
 	display: inline-block;
 	height: 40px;
 	width: 40px;
@@ -606,7 +606,7 @@ body.page-dashboard header .header-data .hdata i{
 	box-shadow: inset 0px 0px 1px #777;
 }
 
-body.page-dashboard header .header-data .hdata p, header .header-data .hdata a, header .header-data .hdata a:hover{
+header .header-data .hdata p, header .header-data .hdata a, header .header-data .hdata a:hover{
 	display: block;
 	line-height: 16px;
 	font-weight: bold;
@@ -616,7 +616,7 @@ body.page-dashboard header .header-data .hdata p, header .header-data .hdata a, 
 	color: #666;
 }
 
-body.page-dashboard header .header-data .hdata em{
+header .header-data .hdata em{
 	display: block;
 	font-weight: normal;
 	font-style: normal;
@@ -625,14 +625,14 @@ body.page-dashboard header .header-data .hdata em{
 
 /* Notification */
 
-body.page-dashboard .noty_text{
+.noty_text{
 	font-size: 12px;
 	line-height: 20px;
 }
 
 /* Sidebar */
 
-body.page-dashboard .sidebar{
+.sidebar{
 	width: 230px;
 	float: left;
 	display: block;
@@ -641,11 +641,11 @@ body.page-dashboard .sidebar{
 	position: relative;
 }
 
-body.page-dashboard .sidebar .sidebar-dropdown{
+.sidebar .sidebar-dropdown{
 	display: none;
 }
 
-body.page-dashboard .sidebar .sidebar-dropdown a{
+.sidebar .sidebar-dropdown a{
 	color: #fff !important;
 	box-shadow: inset 0px 0px 1px #000;
 	background-color: #343434;
@@ -665,16 +665,16 @@ body.page-dashboard .sidebar .sidebar-dropdown a{
 
 }
 
-body.page-dashboard .sidebar ul{
+.sidebar ul{
 	padding: 0px;
 	margin: 0px;
 }
 
-body.page-dashboard .sidebar ul li{
+.sidebar ul li{
 	list-style-type: none;
 }
 
-body.page-dashboard .sidebar #nav {
+.sidebar #nav {
   display: block;
   width:100%;
   margin:0 auto;
@@ -682,7 +682,7 @@ body.page-dashboard .sidebar #nav {
   z-index: 60;
 }
 
-body.page-dashboard .sidebar #nav li i{
+.sidebar #nav li i{
 	display:inline-block;
 	margin-right: 5px ;
 	background: #eee ;
@@ -695,7 +695,7 @@ body.page-dashboard .sidebar #nav li i{
 	border: 1px solid #ccc;
 }
 
-body.page-dashboard .sidebar  #nav li span i{
+.sidebar  #nav li span i{
 	margin: 0px;
 	color: #999;
 	background: transparent !important;
@@ -703,7 +703,7 @@ body.page-dashboard .sidebar  #nav li span i{
 }
 
 
-body.page-dashboard .sidebar #nav > li > a {
+.sidebar #nav > li > a {
   display: block;
   padding: 10px 20px;
   font-size: 13px;
@@ -721,7 +721,7 @@ body.page-dashboard .sidebar #nav > li > a {
   box-shadow: inset 0px 1px 1px #fff;
 }
 
-body.page-dashboard .sidebar #nav > li > a:hover, .sidebar #nav > li.open > a {
+.sidebar #nav > li > a:hover, .sidebar #nav > li.open > a {
   color: #e9e9e9;
   border-bottom: 1px solid #167cac;
   border-top: 1px solid #2094ca;
@@ -737,25 +737,25 @@ body.page-dashboard .sidebar #nav > li > a:hover, .sidebar #nav > li.open > a {
   font-weight: bold;
 }
 
-body.page-dashboard .sidebar #nav > li > a:hover i, .sidebar #nav > li.open > a  i{
+.sidebar #nav > li > a:hover i, .sidebar #nav > li.open > a  i{
 	color: #fff;
   background-color: #167cac !important;
   border: 1px solid #167cac;
 }
 
-body.page-dashboard .sidebar #nav > li > a:hover span i, .sidebar #nav > li.open > a span i{
+.sidebar #nav > li > a:hover span i, .sidebar #nav > li.open > a span i{
   color: #fff;
   background: transparent !important;
   border: 0px;
 }
 
-body.page-dashboard .sidebar #nav li li.current{
+.sidebar #nav li li.current{
 	background:#f3f3f3;
 }
 
-body.page-dashboard .sidebar #nav li ul { display: none; background: #efefef url("../dashboard/img/cream.png") repeat; }
+.sidebar #nav li ul { display: none; background: #efefef url("../dashboard/img/cream.png") repeat; }
 
-body.page-dashboard .sidebar #nav li ul li a {
+.sidebar #nav li ul li a {
   display: block;
   background: none;
   padding: 10px 0px;
@@ -766,18 +766,18 @@ body.page-dashboard .sidebar #nav li ul li a {
   box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.1);
 }
 
-body.page-dashboard .sidebar #nav li ul li a:hover {
+.sidebar #nav li ul li a:hover {
   background: #eee;
   border-bottom: 1px solid #ddd;
 }
 
-body.page-dashboard .sidebar #nav li.open ul{
+.sidebar #nav li.open ul{
 	display: block !important;
 }
 
 /* Main */
 
-body.page-dashboard .mainbar{
+.mainbar{
 	position: relative;
 	margin-left: 230px;
 	margin-right: 0px;
@@ -788,18 +788,18 @@ body.page-dashboard .mainbar{
 	min-height: 800px;
 }
 
-body.page-dashboard .mainbar .container{
+.mainbar .container{
    max-width:100% !important;
 	width: 100% !important;
 }
 
 /* Pagination*/
 
-body.page-dashboard .pagination{
+.pagination{
 	margin: 10px 0px 5px 0px;
 }
 
-body.page-dashboard .pagination ul > li > a, .pagination ul > li > span {
+.pagination ul > li > a, .pagination ul > li > span {
 	border: 1px solid #aaa;
 	margin-right: 2px;
 	border-radius: 5px !important;
@@ -815,76 +815,76 @@ body.page-dashboard .pagination ul > li > a, .pagination ul > li > span {
   color: #666;
 }
 
-body.page-dashboard .pagination ul > li > a:hover{
+.pagination ul > li > a:hover{
 	color: #333;
 }
 
 /* Data tables */
 
 
-body.page-dashboard .page-tables #data-table{
+.page-tables #data-table{
 	margin-bottom: 20px;
 }
 
-body.page-dashboard .page-tables .dataTables_length{
+.page-tables .dataTables_length{
 	margin-top:5px;
 	margin-bottom:5px;
 	font-size:12px;
 	font-weight:normal;
 }
 
-body.page-dashboard .page-tables .dataTables_length select{
+.page-tables .dataTables_length select{
 	border-color: #ddd;
 	border-radius: 2px;
 }
 
-body.page-dashboard .page-tables .dataTables_filter{
+.page-tables .dataTables_filter{
 	margin-top:5px;
 	margin-bottom:5px;
 	font-size:12px;
 	font-weight:normal;
 }
 
-body.page-dashboard .page-tables .dataTables_filter input{
+.page-tables .dataTables_filter input{
 	border-radius:3px;
 	border:1px solid #ddd;
 	padding:3px;
 	line-height:12px;
 }
 
-body.page-dashboard .page-tables #data-table{
+.page-tables #data-table{
 	border:1px solid #ddd;
 }
 
-body.page-dashboard .page-tables table#data-table thead th{
+.page-tables table#data-table thead th{
 	padding:7px 1.5% 7px 10px;
 	font-weight:normal;
 	border-bottom:0px;
   text-align: right;
 }
 
-body.page-dashboard .page-tables table#data-table tfoot th{
+.page-tables table#data-table tfoot th{
 	border-top:1px solid #ddd;
 	padding:7px 10px;
 	font-weight:normal;
 	background:#fff;
 }
 
-body.page-dashboard .page-tables table#data-table td{
+.page-tables table#data-table td{
 	background:#fcfcfc;
 	border-top:1px solid #ddd;
   text-align: right;
 }
 
-body.page-dashboard .page-tables .dataTables_info{
+.page-tables .dataTables_info{
 	margin-bottom:20px;
 }
 
-body.page-dashboard .page-tables .dataTables_paginate{
+.page-tables .dataTables_paginate{
 	margin-bottom:20px;
 }
 
-body.page-dashboard .page-tables .dataTables_paginate a{
+.page-tables .dataTables_paginate a{
 	background:#fff;
 	border:1px solid #ddd;
 	border-radius:2px;
@@ -893,17 +893,17 @@ body.page-dashboard .page-tables .dataTables_paginate a{
 	color: #aaa;
 }
 
-body.page-dashboard .page-tables .dataTables_paginate a:hover{
+.page-tables .dataTables_paginate a:hover{
 	background:#f8f8f8;
 }
 
-body.page-dashboard .page-tables .dataTables_paginate a.paginate_active{
+.page-tables .dataTables_paginate a.paginate_active{
 	background:#f8f8f8;
 }
 
 /* Page head */
 
-body.page-dashboard .mainbar .page-head{
+.mainbar .page-head{
   background-color: #f8f8f8;
   background: -webkit-gradient(linear, left top, left bottom, from(#f8f8f8), to(#f2f2f2));
   background: -webkit-linear-gradient(top, #f8f8f8, #f2f2f2);
@@ -916,45 +916,45 @@ body.page-dashboard .mainbar .page-head{
   box-shadow: inset 0px 1px 1px #fff;
 }
 
-body.page-dashboard .mainbar .page-head h2{
+.mainbar .page-head h2{
 	font-weight: normal;
 	font-size: 20px;
 }
 
 /* Bread crumb */
 
-body.page-dashboard .mainbar .bread-crumb{
+.mainbar .bread-crumb{
 	font-size: 11px;
 	margin-top: 10px;
 	color: #aaa;
 }
 
-body.page-dashboard .mainbar .bread-crumb i{
+.mainbar .bread-crumb i{
 	margin-right: 3px;
 }
 
-body.page-dashboard .mainbar .bread-crumb .divider{
+.mainbar .bread-crumb .divider{
 	margin: 0px 3px;
 }
 
-body.page-dashboard .mainbar .bread-crumb a{
+.mainbar .bread-crumb a{
 	color: #666;
 }
 
-body.page-dashboard .mainbar .bread-crumb a.bread-current{
+.mainbar .bread-crumb a.bread-current{
 	color: #888;
 }
 
 /* Matter */
 
-body.page-dashboard .mainbar .matter{
+.mainbar .matter{
 	border-top: 1px solid #ddd;
 	padding: 15px 0px;
 }
 
 /* Widget */
 
-body.page-dashboard .widget {
+.widget {
   border: 1px solid #c9c9c9;
   border-radius: 3px;
   margin-top: 10px;
@@ -962,79 +962,79 @@ body.page-dashboard .widget {
   background: #fafafa url('../dashboard/img/cream.png') repeat;
 }
 
-body.page-dashboard .widget p{
+.widget p{
 	margin: 3px 0px 5px 0px !important;
 	line-height: 20px;
 }
 
-body.page-dashboard .widget hr{
+.widget hr{
 	margin: 8px 0px;
 	border-top: 1px solid #ccc;
 	border-bottom: 1px solid #fff;
 }
 
-body.page-dashboard .widget .table *{
+.widget .table *{
 	border-color:#e8e8e8 !important;
 }
 
-body.page-dashboard .widget .table.table-bordered{
+.widget .table.table-bordered{
 	margin-bottom:0px;
 	border:0px;
 }
 
-body.page-dashboard .widget .table.table-bordered tr th{
+.widget .table.table-bordered tr th{
 	border-top:0px;
 	border-left:0px;
 }
 
-body.page-dashboard .widget .table.table-bordered tr th:last-child{
+.widget .table.table-bordered tr th:last-child{
 	border-right:0px;
 }
 
-body.page-dashboard .widget .table.table-bordered tr:first-child td{
+.widget .table.table-bordered tr:first-child td{
 	border-top:0px;
 }
 
-body.page-dashboard .widget .table.table-bordered tr:last-child td{
+.widget .table.table-bordered tr:last-child td{
 	border-bottom:0px;
 }
 
-body.page-dashboard .widget .table.table-bordered td{
+.widget .table.table-bordered td{
 	border-right:1px solid #ddd;
 }
 
-body.page-dashboard .widget .table.table-bordered tr td:first-child{
+.widget .table.table-bordered tr td:first-child{
 	border-left:0px;
 }
 
-body.page-dashboard .widget .table.table-bordered td:last-child{
+.widget .table.table-bordered td:last-child{
 	border-right:0px;
 }
 
-body.page-dashboard .widget.wblack{
+.widget.wblack{
   background: #fafafa url('../dashboard/img/black.png') repeat;
   color: #ddd;
   border: 1px solid #222;
 }
 
-body.page-dashboard .widget.wblack hr{
+.widget.wblack hr{
 	border-top: 1px solid #444;
 	border-bottom: 1px solid #222;
 }
 
-body.page-dashboard .widget.wblack a{
+.widget.wblack a{
 	color: #aaa;
 }
 
-body.page-dashboard .widget.wblack a:hover{
+.widget.wblack a:hover{
 	color: #888;
 }
 
-body.page-dashboard .widget .padd, .modal-body{
+.widget .padd, .modal-body{
 	padding: 13px 15px;
 }
 
-body.page-dashboard .widget .widget-head,.modal-header{
+.widget .widget-head,.modal-header{
   background-color: #f8f8f8;
   background: -webkit-gradient(linear, left top, left bottom, from(#f8f8f8), to(#f2f2f2));
   background: -webkit-linear-gradient(top, #f8f8f8, #f2f2f2);
@@ -1053,7 +1053,7 @@ body.page-dashboard .widget .widget-head,.modal-header{
     padding: 8px 15px;
 }
 
-body.page-dashboard .widget.wblack .widget-head{
+.widget.wblack .widget-head{
   background-color: #333;
   background: -webkit-gradient(linear, left top, left bottom, from(#333), to(#111));
   background: -webkit-linear-gradient(top, #333, #111);
@@ -1068,25 +1068,25 @@ body.page-dashboard .widget.wblack .widget-head{
 	color: #ccc;
 }
 
-body.page-dashboard .widget .widget-head .widget-icons i{
+.widget .widget-head .widget-icons i{
 	font-size: 14px;
 	margin: 0px 4px;
 }
 
-body.page-dashboard .widget .widget-head .widget-icons a{
+.widget .widget-head .widget-icons a{
 	color: #aaa;
 }
 
-body.page-dashboard .widget .widget-head .widget-icons a:hover{
+.widget .widget-head .widget-icons a:hover{
 	color: #999;
 }
 
-body.page-dashboard .widget.wblack .widget-head .widget-icons i{
+.widget.wblack .widget-head .widget-icons i{
 	font-size: 14px;
 	margin: 0px 4px;
 }
 
-body.page-dashboard .widget .widget-foot, .modal-footer{
+.widget .widget-foot, .modal-footer{
   background-color: #f8f8f8;
   background: -webkit-gradient(linear, left top, left bottom, from(#f8f8f8), to(#f2f2f2));
   background: -webkit-linear-gradient(top, #f8f8f8, #f2f2f2);
@@ -1105,7 +1105,7 @@ body.page-dashboard .widget .widget-foot, .modal-footer{
   box-shadow: inset 0px 1px 1px #fff;
 }
 
-body.page-dashboard .widget.wblack .widget-foot{
+.widget.wblack .widget-foot{
   background-color: #111;
   background: -webkit-gradient(linear, left top, left bottom, from(#222), to(#111));
   background: -webkit-linear-gradient(top, #222, #111);
@@ -1122,25 +1122,25 @@ body.page-dashboard .widget.wblack .widget-foot{
 
 /* Widget white extras */
 
-body.page-dashboard .widget .nav-tabs > li a {
+.widget .nav-tabs > li a {
    	padding: 5px 10px;
 }
 
-body.page-dashboard .widget .nav-tabs {
+.widget .nav-tabs {
 	margin-bottom: 5px;
 }
 
-body.page-dashboard .widget .tab-content{
+.widget .tab-content{
 	margin-bottom: 10px;
 }
 
 /* Widget black extras */
 
-body.page-dashboard .widget.wblack .btn-inverse{
+.widget.wblack .btn-inverse{
 	border: 1px solid #212121;
 }
 
-body.page-dashboard .widget.wblack a.btn-primary, .widget.wblack a.btn-primary:hover,
+.widget.wblack a.btn-primary, .widget.wblack a.btn-primary:hover,
 .widget.wblack a.btn-warning, .widget.wblack a.btn-warning:hover,
 .widget.wblack a.btn-danger,  .widget.wblack a.btn-danger:hover,
 .widget.wblack a.btn-success, .widget.wblack a.btn-success:hover,
@@ -1149,7 +1149,7 @@ body.page-dashboard .widget.wblack a.btn-primary, .widget.wblack a.btn-primary:h
     color: #fff;
 }
 
-body.page-dashboard .widget.wblack .form-actions{
+.widget.wblack .form-actions{
 	border-radius: 5px;
   background-color: #111;
   background: -webkit-gradient(linear, left top, left bottom, from(#222), to(#111));
@@ -1162,7 +1162,7 @@ body.page-dashboard .widget.wblack .form-actions{
     box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.1);
 }
 
-body.page-dashboard .widget.wblack h2,
+.widget.wblack h2,
 .widget.wblack h3,
 .widget.wblack h4,
 .widget.wblack h5,
@@ -1170,11 +1170,11 @@ body.page-dashboard .widget.wblack h2,
 	color: #ddd;
 }
 
-body.page-dashboard .widget.wblack blockquote{
+.widget.wblack blockquote{
 	border-left: 3px solid #555;
 }
 
-body.page-dashboard .widget.wblack .pagination ul > li > a, .widget.wblack .pagination ul > li > span {
+.widget.wblack .pagination ul > li > a, .widget.wblack .pagination ul > li > span {
   background-color: #111;
   background: -webkit-gradient(linear, left top, left bottom, from(#222), to(#111));
   background: -webkit-linear-gradient(top, #222, #111);
@@ -1186,28 +1186,28 @@ body.page-dashboard .widget.wblack .pagination ul > li > a, .widget.wblack .pagi
   border: 1px solid #161616;
 }
 
-body.page-dashboard .widget.wblack .pagination ul > li > a:hover{
+.widget.wblack .pagination ul > li > a:hover{
 	background: #222;
 }
 
-body.page-dashboard .widget.wblack .table td{
+.widget.wblack .table td{
 	border-top: 1px solid #222;
 }
 
-body.page-dashboard .widget.wblack .table tr:hover{
+.widget.wblack .table tr:hover{
 	background: rgba(255,255,255,0.1);
 }
 
-body.page-dashboard .widget.wblack .nav-tabs > .active > a, .widget.wblack .nav-tabs > .active > a:hover {
+.widget.wblack .nav-tabs > .active > a, .widget.wblack .nav-tabs > .active > a:hover {
 	background: #222;
 }
 
-body.page-dashboard .widget.wblack .nav-tabs {
+.widget.wblack .nav-tabs {
     margin-bottom: 5px;
     border-bottom: 1px solid #222;
 }
 
-body.page-dashboard .widget.wblack .nav-tabs > li a {
+.widget.wblack .nav-tabs > li a {
    	padding: 5px 10px;
   	background-color: #111;
   	background: -webkit-gradient(linear, left top, left bottom, from(#222), to(#111));
@@ -1224,65 +1224,65 @@ body.page-dashboard .widget.wblack .nav-tabs > li a {
     margin-right: 5px;
 }
 
-body.page-dashboard .widget.wblack .nav-tabs > li a:hover {
+.widget.wblack .nav-tabs > li a:hover {
     background: #222;
 }
 
-body.page-dashboard .widget.wblack .nav-tabs > li.active {
+.widget.wblack .nav-tabs > li.active {
     border-bottom: 0px;
 }
 
-body.page-dashboard .widget.wblack .nav-tabs > li.active a {
+.widget.wblack .nav-tabs > li.active a {
     color: #fff;
     background: #333 url('../dashboard/img/back.png');
     border-bottom: 0px;
 }
 
-body.page-dashboard .widget.wblack .nav-tabs > li.active a:hover {
+.widget.wblack .nav-tabs > li.active a:hover {
     background: #333 url('../dashboard/img/back.png');
     border-bottom: 0px;
 }
 
-body.page-dashboard .widget.wblack .tab-content{
+.widget.wblack .tab-content{
 	margin-bottom: 10px;
 }
 
 /* Calendar */
 
-body.page-dashboard .fc-header-title h2 {
+.fc-header-title h2 {
 	font-size: 15px;
 	line-height: 20px;
 }
 
-body.page-dashboard .fc-event-skin {
+.fc-event-skin {
 	background-color: #ff5d5e;
 	border-color: #ff3839;
 }
 
-body.page-dashboard .fc-button-month, .fc-button-agendaWeek, .fc-button-agendaDay {
+.fc-button-month, .fc-button-agendaWeek, .fc-button-agendaDay {
 	margin-top: -48px;
 	right: 20px;
 }
 
 
-body.page-dashboard .fc-widget-header {
+.fc-widget-header {
 	padding: 7px 0px !important;
 	color: #666;
 	background: #eee;
 	border-color: #ccc;
 }
 
-body.page-dashboard .fc-content {
+.fc-content {
 	background: #fff;
 }
 
-body.page-dashboard .fc-content td:hover{
+.fc-content td:hover{
 	background: #f3f3f3;
 }
 
 /* Current status */
 
-body.page-dashboard .current-status{
+.current-status{
 	list-style-type: none;
 	padding: 0px;
 	margin: 0px;
@@ -1624,7 +1624,7 @@ border:1px solid #eee;
 
 /* Footer */
 
-body.page-dashboard footer{
+footer{
   background-color: #f8f8f8;
   background: -webkit-gradient(linear, left top, left bottom, from(#f8f8f8), to(#f2f2f2));
   background: -webkit-linear-gradient(top, #f8f8f8, #f2f2f2);
@@ -1638,21 +1638,21 @@ body.page-dashboard footer{
 	border-top: 3px solid #ddd;
 }
 
-body.page-dashboard footer .container{
+footer .container{
 	width:100%;
 	max-width:100% !important;
 }
 
-body.page-dashboard footer a, footer a:visited{
+footer a, footer a:visited{
 	color: #444;
 }
 
-body.page-dashboard footer a:hover{
+footer a:hover{
 	color: #333;
 	text-decoration: underline;
 }
 
-body.page-dashboard footer .copy{
+footer .copy{
 	font-size: 11px;
 }
 
