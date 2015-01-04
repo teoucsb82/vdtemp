@@ -1744,7 +1744,7 @@ body.page-dashboard footer .copy{
 		text-align: center;
 	}
 }
-
+/*
 @media (min-width: 768px) and (max-width: 991px){
 	.form{
 		margin: 0px !important;
@@ -1814,4 +1814,4 @@ body.page-dashboard footer .copy{
 
 .full-width {
   width: 100%;
-}
+}*/
