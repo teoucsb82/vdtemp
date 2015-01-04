@@ -1,7 +1,7 @@
 <%= content_for :body_class do %>page-js<% end %>
 <div class="row">
   <div class="col-sm-5 hidden-xs home_form">
-    <div class="col-sm-12 well lform" style="height: 326px;">
+    <div class="col-sm-12 well lform">
       <div class="row">
         <%= form_tag '/search', :class => "form-vertical" do |f| %>
           <fieldset>
@@ -91,7 +91,7 @@
 
             <div class="row">
               <div class="col-sm-12" style="margin-top: 10px;">
-                <button class="btn btn-primary full-width" type="submit">Search</button>
+                <button class="btn full-width" type="submit">Search</button>
               </div>
             </div>
           </fieldset>
