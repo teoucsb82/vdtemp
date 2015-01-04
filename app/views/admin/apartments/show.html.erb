@@ -48,7 +48,7 @@
         </tr>
         <tr>
           <td>Description</td>
-          <td><%= @apartment.description.html_safe %></td>
+          <td><%= @apartment.description.html_safe if @apartment.description %></td>
         </tr>
       </table>
 
