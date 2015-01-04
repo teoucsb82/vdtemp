@@ -11,6 +11,7 @@
  *= require_self
  *= require font-awesome
  *= require jquery.fileupload-ui
+ *= require_tree ./dashboard
  */
 
 @import "bootstrap-sprockets";

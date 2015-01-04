@@ -4,7 +4,7 @@ class Image < ActiveRecord::Base
   mount_uploader :photo, PhotoUploader
 
   def to_jq_upload
-    host = Rails.env.production? ? "www.viadeca.com" : "localhost:3000"
+    host = Rails.env.production? ? "https://secure-hollows-5983.herokuapp.com" : "localhost:3000"
     {
       "name" => read_attribute(:photo),
       "size" => photo.size,
