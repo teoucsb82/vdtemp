@@ -1,26 +1,50 @@
+<div class="content project">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-sm-8">
+        <h3 class="title"><%= @apartment.address %></h3>
+        <h6><%= number_to_currency(@apartment.rent) %> per month + <%= number_to_currency(@apartment.rent) %> security deposit</h6>
+        <div id="myCarousel" class="carousel slide">
+            <!-- Carousel items -->
+            <div class="carousel-inner">
+              <% @apartment.images.each_with_index do |image, i| %>
+                <div class="<%= 'active ' if i == 0 %>item">
+                  <%= cl_image_tag(image.photo.main) %>
+                </div>
+              <% end %>
+            </div>
+            <!-- Carousel nav -->
+            <a class="carousel-control left" href="#myCarousel" data-slide="prev">
+              <span class="fa fa-chevron-left"></span>
+            </a>
+            <a class="carousel-control right" href="#myCarousel" data-slide="next">
+              <span class="fa fa-chevron-right"></span>
+            </a>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-4">
+          <div class="prdetails">
+            <h5 class="title">Description</h5>
+            <p><%= @apartment.description.html_safe %></p>
+            <hr />
+            <strong>Amenities</strong>
+            <ul>
+              <div class="col-md-6">
+                <% midpoint = @apartment.amenities.size / 2 %>
+                <% @apartment.amenities.each_with_index do |a, i| %>
+                  <% if i == midpoint %>
+                    </div><div class="col-md-6">
+                  <% end %>
+                  <li><%= a %></li>
+                <% end %>
+              </div>
+            </ul>
+          </div>
+          <%= link_to "Apply Now", root_url, class: "btn btn-success btn-lg full-width" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-<h2><%= @apartment.street_address %>, #<%= @apartment.unit %></h2>
-<h2><%= @apartment.city %>, <%= @apartment.state %> <%= @apartment.zip %></h2>
-
-<h3>Amenities</h3>
-
-
-<%= "rent = #{@apartment.rent}" unless @apartment.rent.nil? %>
-<%= "bedrooms = #{@apartment.bedrooms}" unless @apartment.bedrooms.nil? %>
-<%= "bathrooms = #{@apartment.bathrooms}" unless @apartment.bathrooms.nil? %>
-<%= "square_footage = #{@apartment.square_footage}" unless @apartment.square_footage.nil? %>
-<%= "parking = #{@apartment.parking}" unless @apartment.parking.nil? %>
-<%= "stove = #{@apartment.stove}" unless @apartment.stove.nil? %>
-<%= "washer = #{@apartment.washer}" unless @apartment.washer.nil? %>
-<%= "dryer = #{@apartment.dryer}" unless @apartment.dryer.nil? %>
-<%= "dishwasher = #{@apartment.dishwasher}" unless @apartment.dishwasher.nil? %>
-<%= "refrigerator = #{@apartment.refrigerator}" unless @apartment.refrigerator.nil? %>
-<%= "microwave = #{@apartment.microwave}" unless @apartment.microwave.nil? %>
-<%= "laundry_on_site = #{@apartment.laundry_on_site}" unless @apartment.laundry_on_site.nil? %>
-<%= "hardwood_floors = #{@apartment.hardwood_floors}" unless @apartment.hardwood_floors.nil? %>
-<%= "pets_allowed     = #{@apartment.pets_allowed}" unless @apartment.pets_allowed.nil? %>
-<%= "gas_heater = #{@apartment.gas_heater}" unless @apartment.gas_heater.nil? %>
-<%= "balcony = #{@apartment.balcony}" unless @apartment.balcony.nil? %>
-<%= "air_conditioning = #{@apartment.air_conditioning}" unless @apartment.air_conditioning.nil? %>
-<%= "fireplace = #{@apartment.fireplace}" unless @apartment.fireplace.nil? %>
-<%= "patio = #{@apartment.patio}" unless @apartment.patio.nil? %>
+<!-- Page content ends -->

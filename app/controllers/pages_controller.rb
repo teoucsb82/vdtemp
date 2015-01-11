@@ -2,7 +2,8 @@ class PagesController < ApplicationController
 
   def index
     @properties = Property.all
-    @apartments = Apartment.joins(:images).uniq
+    @apartments = Apartment.all
+    @apartments_with_images = Apartment.joins(:images).uniq
 
     respond_to do |format|
       if params[:v]

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150101024250) do
+ActiveRecord::Schema.define(version: 20150111014034) do
 
   create_table "apartments", force: true do |t|
     t.string   "unit",                        null: false
@@ -67,6 +67,8 @@ ActiveRecord::Schema.define(version: 20150101024250) do
     t.text     "metadata"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.float    "latitude"
+    t.float    "longitude"
   end
 
   add_index "properties", ["street_address"], name: "index_properties_on_street_address", unique: true

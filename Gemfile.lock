@@ -58,6 +58,7 @@ GEM
     execjs (2.2.1)
     font-awesome-rails (4.2.0.0)
       railties (>= 3.2, < 5.0)
+    geocoder (1.2.6)
     hike (1.2.3)
     i18n (0.6.11)
     jbuilder (1.5.3)
@@ -150,6 +151,7 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   devise
   font-awesome-rails
+  geocoder
   jbuilder (~> 1.2)
   jquery-fileupload-rails
   jquery-rails

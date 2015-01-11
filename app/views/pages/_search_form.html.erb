@@ -1,0 +1,48 @@
+<%= form_tag search_apartments_url, :class => "form-horizontal" do %>
+  <div class="form-group">
+    <%= label_tag :location, "Where do you want to live?", class: "col-xs-12" %>
+    <div class="col-xs-12">
+      <%= text_field_tag :location, nil, placeholder: "Search by city or zip code", class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= label_tag :radius, "Search Radius (Miles)", class: "col-xs-6" %>
+    <%= label_tag :square_footage, "Square Footage", class: "col-xs-6" %>
+    <div class="col-xs-6">
+      <%= number_field_tag :radius, nil, placeholder: "Any", class: "form-control" %>
+    </div>
+    <div class="col-xs-6">
+      <%= text_field_tag :square_footage, nil, placeholder: "Any", class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= label_tag :bedrooms, "Bedrooms", class: "col-xs-6" %>
+    <%= label_tag :bathrooms, "Bathrooms", class: "col-xs-6" %>
+    <div class="col-xs-6">
+      <%= select_tag :bedrooms, options_for_select(["Any"] + @apartments.available.map(&:bedrooms).uniq.sort), class: "form-control" %>
+    </div>
+    <div class="col-xs-6">
+      <%= select_tag :bathrooms, options_for_select(["Any"] + @apartments.available.map(&:bathrooms).uniq.sort), class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= label_tag :min_price, "Min Price", class: "col-xs-6" %>
+    <%= label_tag :max_price, "Max Price", class: "col-xs-6" %>
+    <div class="col-xs-6">
+      <%= select_tag :min_price, options_for_select(["Any"] + prices_array(@apartments)), class: "form-control" %>
+    </div>
+    <div class="col-xs-6">
+      <%= select_tag :max_price, options_for_select(["Any"] + prices_array(@apartments)), class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-xs-12">
+      <%= submit_tag "Search", class: "btn btn-primary full-width" %>
+    </div>
+  </div>
+
+<% end %>

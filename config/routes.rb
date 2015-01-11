@@ -18,6 +18,11 @@ Viadeca::Application.routes.draw do
   resources :pages, :only => [:index]
   resources :contacts, :only => [:index, :create]
   resources :background_checks, :only => [:create]
+  resources :apartments do
+    collection do
+      post '/search' => 'apartments#search'
+    end
+  end
   get '/applications' => 'background_checks#new', as: 'new_background_check'
 
   # The priority is based upon order of creation: first created -> highest priority.

@@ -3,7 +3,9 @@ class Property < ActiveRecord::Base
   has_many :apartments, :dependent => :destroy
   has_many :images, :as => :imageable, :dependent => :destroy
 
-  attr_accessor :description
+  attr_accessor :description, :address
+  geocoded_by :address
+  after_save :geocode
 
   # def self.available
   #   self.joins(:apartments).where(:apartments => { available: true } ).all
@@ -11,6 +13,10 @@ class Property < ActiveRecord::Base
 
   def description
     return metadata.blank? ? nil : JSON.parse(metadata)["description"]
+  end
+
+  def address
+    [street_address, city, state, zip].compact.join(', ')
   end
 
   def update_description(description)

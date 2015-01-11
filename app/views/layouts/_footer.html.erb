@@ -1,78 +1,39 @@
 <!-- Footer starts -->
 <footer>
   <div class="container">
-  <div class="row">
-    <div class="col-md-12">
-
-      <div class="row">
-
-        <div class="col-md-4">
-        <div class="widget">
-          <h5>Contact</h5>
-          <hr />
-          <p>Praesent ultricies enim ac ipsum aliquet . Nullam justo nunc, dignissim at convallis posuere, sodales eu orci. </p>
-          <hr />
-          <i class="fa fa-home"></i> &nbsp; 123, Some Area. Los Angeles, CA, 54321.
-          <hr />
-          <i class="fa fa-phone"></i> &nbsp; +239-3823-3434
-          <hr />
-          <i class="fa fa-envelope-o"></i> &nbsp; <a href="mailto:#">someone@company.com</a>
-          <hr />
-          <div class="social">
-            <a href="#"><i class="fa fa-facebook facebook"></i></a>
-            <a href="#"><i class="fa fa-twitter twitter"></i></a>
-            <a href="#"><i class="fa fa-linkedin linkedin"></i></a>
-            <a href="#"><i class="fa fa-google-plus google-plus"></i></a> 
+    <div class="row">
+      <div class="col-md-12">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="widget">
+              <h5>Contact</h5>
+              <hr />
+              <i class="fa fa-home"></i> &nbsp; TBD
+              <hr />
+              <i class="fa fa-phone"></i> &nbsp; TBD
+              <hr />
+              <i class="fa fa-envelope-o"></i> &nbsp; <%= mail_to "admin@viadeca.com" %>
+              <hr />
+              <div class="social">
+                <a href="#"><i class="fa fa-facebook facebook"></i></a>
+                <a href="#"><i class="fa fa-twitter twitter"></i></a>
+                <a href="#"><i class="fa fa-linkedin linkedin"></i></a>
+                <a href="#"><i class="fa fa-google-plus google-plus"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-8">
+            <div class="widget">
+              <h5>About Us</h5>
+              <hr />
+              <p>Established in 2010, Via Deca LLC. offers a wide assortment of quiet, clean and affordable apartments in Santa Monica and West Los Angeles. We strive to provide the highest quality in customer service and tenant relations, and are available 24/7 for emergencies. Apply today for one of our available units and a representative will get back to you as soon as possible. </p>
+            </div>
           </div>
         </div>
-        </div>
-
-        <div class="col-md-4">
-        <div class="widget">
-          <h5>About Us</h5>
-          <hr />
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras elementum dolor eget nisi fermentum quis hendrerit magna vestibulum. Curabitur pulvinar ornare vulputate scelerisque scelerisque ut consectetur. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras elementum dolor eget nisi fermentum quis hendrerit magna vestibulum..</p>
-        </div>
-        </div>
-
-        <div class="col-md-4">
-        <div class="widget">
-          <h5>Links Goes Here</h5>
-          <hr />
-          <div class="two-col">
-          <div class="col-left">
-            <ul>
-            <li><a href="#">Condimentum</a></li>
-            <li><a href="#">Etiam at</a></li>
-            <li><a href="#">Fusce vel</a></li>
-            <li><a href="#">Vivamus</a></li>
-            <li><a href="#">Pellentesque</a></li>
-            <li><a href="#">Vivamus</a></li>
-            </ul>
-          </div>
-          <div class="col-right">
-            <ul>
-            <li><a href="#">Condimentum</a></li>
-            <li><a href="#">Etiam at</a></li>
-            <li><a href="#">Fusce vel</a></li>
-            <li><a href="#">Vivamus</a></li>
-            <li><a href="#">Pellentesque</a></li>
-            <li><a href="#">Vivamus</a></li>
-            </ul>
-          </div>
-          <div class="clearfix"></div>
-          </div>
-        </div>
-        </div>
-        
+        <hr />
+        <p class="copy">Copyright &copy; <%= Time.now.year %> | <%= link_to "Via Deca", root_url %> - <%= link_to "Home", root_url %> | <%= link_to "Contact Us", contacts_url %> | Designed by <%= mail_to "teo@viadeca.com" %></p>
       </div>
-
-      <hr />
-      <!-- Copyright info -->
-      <p class="copy">Copyright &copy; 2012 | <a href="#">Your Site</a> - <a href="#">Home</a> | <a href="#">About Us</a> | <a href="#">Service</a> | Designed by <a href="http://responsivewebinc.com/bootstrap-themes">Bootstrap Themes</a></p>
     </div>
+    <div class="clearfix"></div>
   </div>
-  <div class="clearfix"></div>
-  </div>
-</footer>   
-<!--/ Footer ends -->
+</footer>

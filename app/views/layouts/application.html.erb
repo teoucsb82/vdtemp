@@ -7,7 +7,7 @@
 		<meta name="keywords" content="Your,Keywords">
 		<meta name="author" content="ResponsiveWebInc">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		
+
 
 		<link rel="shortcut icon" href="img/favicon/favicon.png">
 
@@ -17,7 +17,7 @@
 	</head>
 	<body class="<%= yield :body_class unless :body_class.empty? %>">
 		<%= render 'layouts/header' %>
-		
+
 		<div class="page-head">
 			<div class="container">
 				<%= render 'layouts/flash' %>
@@ -25,7 +25,8 @@
 			</div>
 		</div>
 
-		<%= render 'layouts/cta' %>
+		<%#= render 'layouts/cta' %>
 		<%= render 'layouts/footer' %>
-	</body>	
+    <%= yield :page_end unless :page_end.empty? %>
+	</body>
 </html>
