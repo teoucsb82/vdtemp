@@ -3,7 +3,7 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 $(".page-js").ready ->
-  $("form :submit").click (e) ->
+  $(".home_form form :submit").click (e) ->
     e.preventDefault()
     location = $("#location").val()
     radius = $("#radius").val()
