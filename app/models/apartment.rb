@@ -55,7 +55,7 @@ class Apartment < ActiveRecord::Base
   end
 
   def load_metadata_attributes
-    self.address          = "#{self.property.street_address}, ##{unit}"
+    self.address          = self.property ? "#{self.property.street_address}, ##{unit}" : nil
     return if self.metadata.blank?
     apartment_data        = JSON.parse(self.metadata)
     self.rent             = apartment_data["rent"]
