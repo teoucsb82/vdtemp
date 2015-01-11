@@ -30,8 +30,8 @@ class Apartment < ActiveRecord::Base
     apartments.reject! { |apt| apt.square_footage < params["square_footage"].to_i } unless params["square_footage"].blank?
     apartments.reject! { |apt| apt.bedrooms != params["bedrooms"].to_i } unless params["bedrooms"].blank? || params["bedrooms"].downcase == "any"
     apartments.reject! { |apt| apt.bathrooms != params["bathrooms"].to_i } unless params["bathrooms"].blank? || params["bathrooms"].downcase == "any"
-    apartments.reject! { |apt| apt.min_price < params["min_price"].to_i } unless params["min_price"].blank? || params["min_price"].downcase == "any"
-    apartments.reject! { |apt| apt.max_price > params["max_price"].to_i } unless params["max_price"].blank? || params["max_price"].downcase == "any"
+    apartments.reject! { |apt| apt.rent < params["min_price"].to_i unless apt.rent.blank? } unless params["min_price"].blank? || params["min_price"].downcase == "any"
+    apartments.reject! { |apt| apt.rent > params["max_price"].to_i unless apt.rent.blank? } unless params["max_price"].blank? || params["max_price"].downcase == "any"
 
     json_array = []
     apartments.each do |apt|
