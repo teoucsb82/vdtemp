@@ -37,9 +37,7 @@
 				<div id="owl-recent" class="owl-carousel">
 					<% @apartments.available.each do |apt| %>
             <div class="item">
-              <center>
-                <%= link_to cl_image_tag(apt.images.first.photo.small), apt, class: "img-responsive" unless apt.images.blank? %>
-              </center>
+              <%= link_to cl_image_tag(apt.images.first.photo.small), apt, class: "img-responsive" unless apt.images.blank? %>
               <h4><%= link_to apt.address, apt %></h4>
               <div class="clearfix"></div>
               <%= content_tag(:p, apt.description.html_safe) if apt.description %>

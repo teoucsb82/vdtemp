@@ -8,6 +8,6 @@ module ApartmentsHelper
   end
 
   def prices_array(apartments)
-    return (@apartments.available.map(&:rent).min.to_i..@apartments.available.map(&:rent).max.to_i).to_a.select { |x| x % 50 == 0 }
+    return (@apartments.available.map(&:rent).reject(&:nil?).min.to_i..@apartments.available.map(&:rent).reject(&:nil?).max.to_i).to_a.select { |x| x % 50 == 0 }
   end
 end
