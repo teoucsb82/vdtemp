@@ -13,6 +13,7 @@ Viadeca::Application.routes.draw do
         resources :tenants, shallow: true
       end
     end
+    resources :repairs
   end
 
   resources :pages, :only => [:index]

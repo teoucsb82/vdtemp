@@ -18,6 +18,8 @@ class Admin::TenantsController < ApplicationController
   end
 
   def create
+    @tenant = User.new(tenant_params)
+    
   end
 
   def show

@@ -23,18 +23,7 @@
               <li><%= link_to "+ Add Property", new_admin_property_path %></li>
             </ul>
           </li>
-          <li class="has_sub">
-      <a href="#"><i class="fa fa-file-o"></i> Pages #1  <span class="pull-right"><i class="fa fa-chevron-right"></i></span></a>
-            <ul>
-              <li><a href="post.html">Post</a></li>
-              <li><a href="login.html">Login</a></li>
-              <li><a href="register.html">Register</a></li>
-              <li><a href="support.html">Support</a></li>
-              <li><a href="invoice.html">Invoice</a></li>
-              <li><a href="gallery.html">Gallery</a></li>
-            </ul>
-          </li>
-          <li><%= i_link("Charts", admin_charts_path, "bar-chart-o")   %></li>
+          <li><%= i_link("Repair Requests", admin_repairs_path, "exclamation") %></li>
           <li><%= i_link("Exit Dashboard", destroy_user_session_path, "sign-out", :delete) %></li>
         </ul>
     </div>
