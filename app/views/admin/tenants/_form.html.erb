@@ -1,0 +1,45 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="widget wgreen">
+      <div class="widget-head">
+        <div class="pull-left">Add Tenant</div>
+        <div class="clearfix"></div>
+      </div>
+      <div class="widget-content">
+        <div class="padd">
+          <br />
+
+          <!-- Form starts.  -->
+          <%= form_for([:admin, @tenant], url: admin_apartment_tenants_url(@tenant), :html => {:class => "form-horizontal" }) do |f| %>
+            <div class="form-group">
+              <%= f.label :name_first, class: "col-lg-2 control-label" %>
+
+              <div class="col-lg-8">
+                <%= f.text_field :name_first, autofocus: true, class: "form-control" %>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <%= f.label :name_last, class: "col-lg-2 control-label" %>
+
+              <div class="col-lg-4">
+                <%= f.text_field :name_last, class: "form-control" %>
+              </div>
+            </div>
+
+
+            <div class="form-group">
+              <div class="col-lg-5 col-lg-offset-2">
+                <%= f.submit nil, class: "btn btn-success" %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+
+      <div class="widget-foot">
+        <!-- Footer goes here -->
+      </div>
+    </div>
+  </div>
+</div>

@@ -11,13 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150111014034) do
+ActiveRecord::Schema.define(version: 20150111201334) do
 
   create_table "apartments", force: true do |t|
     t.string   "unit",                        null: false
     t.integer  "bedrooms",                    null: false
     t.float    "bathrooms",                   null: false
-    t.text     "description"
+    t.text     "description", default: "",    null: false
     t.text     "metadata"
     t.boolean  "available",   default: false
     t.datetime "created_at"
@@ -49,15 +49,13 @@ ActiveRecord::Schema.define(version: 20150111014034) do
   end
 
   create_table "images", force: true do |t|
-    t.string   "name"
+    t.string   "title"
+    t.text     "description"
+    t.boolean  "active",         default: false
     t.integer  "imageable_id"
     t.string   "imageable_type"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "photo_file_name"
-    t.string   "photo_content_type"
-    t.integer  "photo_file_size"
-    t.datetime "photo_updated_at"
   end
 
   create_table "properties", force: true do |t|
@@ -89,6 +87,10 @@ ActiveRecord::Schema.define(version: 20150111014034) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "apartment_id"
+    t.string   "name_first"
+    t.string   "name_last"
+    t.string   "phone"
+    t.integer  "lease_id"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
